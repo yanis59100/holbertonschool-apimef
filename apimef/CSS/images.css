@@ -95,3 +95,18 @@ video {
 .containner video:hover {
   width: 25%;
 }
+
+footer {
+  text-align: center;
+  padding: 10px;
+  background-color: #333;
+  color: white;
+}
+
+footer a {
+  color: #ffcc00;
+}
+
+footer a:hover {
+  text-decoration: underline;
+}

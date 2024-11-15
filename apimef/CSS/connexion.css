@@ -94,16 +94,17 @@ button:hover {
 }
 
 /* Pied de page */
-.footer {
+footer {
   text-align: center;
-  margin-top: 20px;
+  padding: 10px;
+  background-color: #333;
+  color: white;
 }
 
-.footer a {
-  color: #4CAF50;
-  text-decoration: none;
+footer a {
+  color: #ffcc00;
 }
 
-.footer a:hover {
+footer a:hover {
   text-decoration: underline;
 }

@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
   <link rel="stylesheet" href="/apimef/CSS/boutique.css">
+  <script src="/apimef/Javascript/boutique.js"></script>
 </head>
 <body>
   <nav aria-label="Navigation principale">
@@ -18,25 +19,39 @@
   </nav>
   <div>
     <h4>Miel a vendre</h4>
-    <table class="styled-table">
-      <thead>
-        <tr>
-          <th>Produit</th>
-          <th>Prix</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>Miel de fleurs</td>
-          <td>10 €</td>
-        </tr>
-        <tr>
-          <td>Miel de forêt</td>
-          <td>12 €</td>
-        </tr>
-      </tbody>
-    </table>
   </div>
 
+
+  <div class="article">
+    <img src="/apimef/img/image miel/miel.jpeg" alt="photo-miel">
+    <span>Miel de tilleul - Prix: 10€</span>
+    <button onclick="ajouterAuPanier('Article 1', 10)">Ajouter au panier</button>
+</div>
+
+<div class="article">
+  <img src="/apimef/img/image miel/miel2.jpeg" alt="photo-miel">
+    <span>Miel de lavande - Prix: 15€</span>
+    <button onclick="ajouterAuPanier('Article 2', 15)">Ajouter au panier</button>
+</div>
+
+<div class="article">
+  <img src="/apimef/img/image miel/miel3.jpeg" alt="photo-miel">
+    <span>Miel de romarin - Prix: 20€</span>
+    <button onclick="ajouterAuPanier('Article 3', 20)">Ajouter au panier</button>
+</div>
+
+<div class="panier">
+    <h2>Panier</h2>
+    <ul id="panierListe"></ul>
+    <p>Total: <span id="totalPrix">0€</span></p>
+    <button onclick="finaliserAchat()">Finaliser l'achat</button>
+</div>
+<br>
+<footer role="contentinfo">
+  <p>
+    Vous avez une question ? <a href="mailto:8845@holbertonstudents.com">Contactez-nous</a>
+  </p>
+  <p>&copy; 2024 Apimef. Tous droits réservés.</p>
+</footer>
 </body>
 </html>

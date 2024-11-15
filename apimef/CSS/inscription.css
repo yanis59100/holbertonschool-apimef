@@ -94,18 +94,17 @@ button[type="submit"]:hover {
 }
 
 /* Footer */
-.footer {
+footer {
   text-align: center;
-  margin-top: 1.5rem;
-  font-size: 0.9rem;
+  padding: 10px;
+  background-color: #333;
+  color: white;
 }
 
-.footer a {
-  color: #007BFF;
-  text-decoration: none;
-  font-weight: bold;
+footer a {
+  color: #ffcc00;
 }
 
-.footer a:hover {
+footer a:hover {
   text-decoration: underline;
 }

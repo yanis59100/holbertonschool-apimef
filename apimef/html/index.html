@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Apimef - Apiculture et Miel Bio</title>
+    <!-- Icône de l'onglet -->
+    <link rel="shortcut icon" href="./logo-head.png" type="image/png" />
+    <!-- Lien vers une feuille de style externe -->
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+
+    <style type="text/css">
+      div{
+        background-image: url(/apimef/img/apimef.jpg);
+      }
+    </style>
+    <!-- Barre de navigation -->
+    <nav aria-label="Navigation principale">
+      <ul>
+        <li><a href="#home">Accueil</a></li>
+        <li><a href="boutique.html">Boutique</a></li>
+        <li><a href="images.html" title="Voir la galerie d'images">Galerie</a></li>
+        <li><a href="inscription.html">Inscription</a></li>
+        <li><a href="connexion.html">Connexion</a></li>
+      </ul>
+    </nav>
+
+    <!-- En-tête -->
+    <header id="home" role="banner">
+      <h1>Bienvenue sur Apimef</h1>
+      <p>
+        Apimef vous présente l'univers de l'apiculture avec du miel 100% bio, directement issu de nos ruches.
+      </p>
+    </header>
+
+    <!-- Contenu principal -->
+    <main>
+      <!-- Section : Formulaire de contact -->
+      <section id="form" aria-labelledby="form-title">
+        <h2 id="form-title">Formulaire de contact</h2>
+        <form action="submit_form.php" method="post">
+          <!-- Sélection du genre -->
+          <label for="gender">Genre</label>
+          <select id="gender" name="gender" required>
+            <option value="Homme">Homme</option>
+            <option value="Femme" selected>Femme</option>
+            <option value="Autre">Autre</option>
+          </select>
+          <br />
+
+          <!-- Nom -->
+          <label for="name">Nom</label>
+          <input
+            type="text"
+            id="name"
+            name="name"
+            placeholder="Entrez votre nom"
+            aria-required="true"
+            required
+          />
+          <br />
+
+          <!-- Âge -->
+          <label for="age">Âge</label>
+          <input
+            type="number"
+            id="age"
+            name="age"
+            value="18"
+            min="1"
+            max="120"
+            aria-required="true"
+            required
+          />
+          <br />
+
+          <!-- Message -->
+          <label for="message">Votre message</label>
+          <textarea
+            id="message"
+            name="message"
+            placeholder="Votre message..."
+            cols="30"
+            rows="5"
+            aria-required="true"
+            required
+          ></textarea>
+          <br />
+
+          <!-- Conditions générales -->
+          <input type="checkbox" id="cgv" name="cgv" required />
+          <label for="cgv">J'accepte les <a href="cgv.html" target="_blank">conditions générales</a></label>
+          <br />
+
+          <!-- Bouton de soumission -->
+          <button type="submit">Envoyer</button>
+        </form>
+      </section>
+    </main>
+
+    <!-- Pied de page -->
+    <footer role="contentinfo">
+      <p>
+        Vous avez une question ? <a href="mailto:8845@holbertonstudents.com">Contactez-nous</a>
+      </p>
+      <p>&copy; 2024 Apimef. Tous droits réservés.</p>
+    </footer>
+  </body>
+</html>

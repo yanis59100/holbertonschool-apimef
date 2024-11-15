@@ -8,7 +8,6 @@ body {
   color: #333;
 }
 
-/* Navigation principale */
 nav {
   background-color: #4CAF50;
   padding: 1em 0;
@@ -45,11 +44,26 @@ h3 {
 }
 
 /* Image */
-img {
-  display: block;
-  margin: 1em auto;
+.container {
+  margin: 100px 0 0 200px;
+  width: 70%;
+  height: 450px;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.container img {
+  width: 10%;
+  height: 100%;
+  object-fit: cover;
   border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border: 2px solid rgba(255, 255, 255, 0.684);
+  transition: all ease-in-out 0.5s;
+}
+
+.container img:hover {
+  width: 25%;
 }
 
 /* Vidéo */
@@ -58,4 +72,26 @@ video {
   margin: 1em auto;
   border: 2px solid #4CAF50;
   border-radius: 10px;
+}
+
+.containner {
+  margin: 100px 0 0 200px;
+  width: 70%;
+  height: 450px;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.containner video{
+  width: 10%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 10px;
+  border: 2px solid rgba(255, 255, 255, 0.684);
+  transition: all ease-in-out 0.5s;
+}
+
+.containner video:hover {
+  width: 25%;
 }

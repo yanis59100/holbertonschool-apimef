@@ -5,35 +5,29 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Apimef - Apiculture et Miel Bio</title>
     <!-- Icône de l'onglet -->
-    <link rel="shortcut icon" href="./logo-head.png" type="image/png" />
+    <link rel="shortcut icon" href="/apimef/img/apimef.jpg" type="image/png" />
     <!-- Lien vers une feuille de style externe -->
-    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="/apimef/CSS/styles.css" />
   </head>
   <body>
-
-    <style type="text/css">
-      div{
-        background-image: url(/apimef/img/apimef.jpg);
-      }
-    </style>
     <!-- Barre de navigation -->
     <nav aria-label="Navigation principale">
       <ul>
-        <li><a href="#home">Accueil</a></li>
+        <li><a href="index.html">Accueil</a></li>
         <li><a href="boutique.html">Boutique</a></li>
-        <li><a href="images.html" title="Voir la galerie d'images">Galerie</a></li>
+        <li><a href="images.html">Galerie</a></li>
         <li><a href="inscription.html">Inscription</a></li>
         <li><a href="connexion.html">Connexion</a></li>
       </ul>
     </nav>
 
+    <header id="home" role="banner"></header>
+
     <!-- En-tête -->
-    <header id="home" role="banner">
       <h1>Bienvenue sur Apimef</h1>
       <p>
         Apimef vous présente l'univers de l'apiculture avec du miel 100% bio, directement issu de nos ruches.
       </p>
-    </header>
 
     <!-- Contenu principal -->
     <main>
@@ -44,9 +38,8 @@
           <!-- Sélection du genre -->
           <label for="gender">Genre</label>
           <select id="gender" name="gender" required>
-            <option value="Homme">Homme</option>
-            <option value="Femme" selected>Femme</option>
-            <option value="Autre">Autre</option>
+            <option value="Homme" selected>Monsieur</option>
+            <option value="Femme">Madame</option>
           </select>
           <br />
 

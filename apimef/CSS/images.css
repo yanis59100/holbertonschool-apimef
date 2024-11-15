@@ -1,0 +1,61 @@
+/* Style global */
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  margin: 0;
+  padding: 0;
+  background-color: #f9f9f9;
+  color: #333;
+}
+
+/* Navigation principale */
+nav {
+  background-color: #4CAF50;
+  padding: 1em 0;
+}
+
+nav ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+}
+
+nav ul li {
+  margin: 0 15px;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+  color: #FFD700;
+}
+
+/* Titre de sections */
+h3 {
+  margin-top: 2em;
+  text-align: center;
+  color: #4CAF50;
+}
+
+/* Image */
+img {
+  display: block;
+  margin: 1em auto;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Vidéo */
+video {
+  display: block;
+  margin: 1em auto;
+  border: 2px solid #4CAF50;
+  border-radius: 10px;
+}

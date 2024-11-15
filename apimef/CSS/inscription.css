@@ -1,47 +1,111 @@
+/* Styles généraux */
 body {
   font-family: Arial, sans-serif;
-  background-color: #f7f9fc;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background-color: #f4f4f4;
+  color: #333;
+}
+
+/* Navigation */
+nav {
+  background-color: #4CAF50;
+  padding: 1rem 0;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
   margin: 0;
   padding: 0;
 }
+
+nav ul li {
+  margin: 0 15px;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: #fff;
+  font-weight: bold;
+  transition: color 0.3s;
+}
+
+nav ul li a:hover {
+  color: #ffdd57;
+}
+
+/* Container */
 .container {
-  max-width: 400px;
+  max-width: 600px;
   margin: 50px auto;
   background: #fff;
-  padding: 20px;
+  padding: 2rem;
   border-radius: 8px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
+
+/* Titre principal */
 h1 {
   text-align: center;
-  color: #333;
+  margin-bottom: 2rem;
+  color: #4CAF50;
 }
-form {
-  display: flex;
-  flex-direction: column;
-}
-label {
-  margin: 10px 0 5px;
+
+/* Formulaire */
+form label {
+  display: block;
   font-weight: bold;
+  margin-bottom: 0.5rem;
 }
-input, button {
-  padding: 10px;
-  margin-bottom: 15px;
+
+form input {
+  width: 100%;
+  padding: 0.8rem;
+  margin-bottom: 1.5rem;
   border: 1px solid #ddd;
-  border-radius: 5px;
-  font-size: 16px;
+  border-radius: 4px;
+  font-size: 1rem;
 }
-button {
+
+form input:focus {
+  border-color: #007BFF;
+  outline: none;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+button[type="submit"] {
+  width: 100%;
+  padding: 1rem;
   background-color: #4CAF50;
-  color: white;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  font-size: 1.2rem;
+  font-weight: bold;
   cursor: pointer;
+  transition: background-color 0.3s;
 }
-button:hover {
-  background-color: #45a049;
+
+button[type="submit"]:hover {
+  background-color: #4CAF50;
 }
+
+/* Footer */
 .footer {
   text-align: center;
-  margin-top: 20px;
-  font-size: 14px;
-  color: #666;
+  margin-top: 1.5rem;
+  font-size: 0.9rem;
+}
+
+.footer a {
+  color: #007BFF;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.footer a:hover {
+  text-decoration: underline;
 }

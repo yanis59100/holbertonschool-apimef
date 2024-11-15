@@ -1,47 +1,109 @@
+/* connexion.css */
+
+/* Style général */
 body {
   font-family: Arial, sans-serif;
-  background-color: #f7f9fc;
   margin: 0;
   padding: 0;
-}
-.container {
-  max-width: 400px;
-  margin: 50px auto;
-  background: #fff;
-  padding: 20px;
-  border-radius: 8px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
-h1 {
-  text-align: center;
+  background-color: #f9f9f9;
   color: #333;
 }
+
+h1 {
+  text-align: center;
+  color: #4CAF50;
+}
+
+/* Navigation */
+nav {
+  background-color: #4CAF50;
+  padding: 1em 0;
+}
+
+nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+nav ul li {
+  display: inline;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+  padding: 5px 10px;
+  border-radius: 5px;
+}
+
+nav ul li a:hover {
+  background-color: #3e8e41;
+}
+
+/* Conteneur principal */
+.container {
+  max-width: 500px;
+  margin: 50px auto;
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Formulaire */
 form {
   display: flex;
   flex-direction: column;
+  gap: 15px;
 }
+
 label {
-  margin: 10px 0 5px;
   font-weight: bold;
 }
-input, button {
+
+input {
   padding: 10px;
-  margin-bottom: 15px;
-  border: 1px solid #ddd;
+  border: 1px solid #ccc;
   border-radius: 5px;
   font-size: 16px;
 }
+
+input:focus {
+  border-color: #4CAF50;
+  outline: none;
+  box-shadow: 0 0 5px rgba(76, 175, 80, 0.5);
+}
+
 button {
   background-color: #4CAF50;
   color: white;
+  padding: 10px;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
   cursor: pointer;
 }
+
 button:hover {
   background-color: #45a049;
 }
+
+/* Pied de page */
 .footer {
   text-align: center;
   margin-top: 20px;
-  font-size: 14px;
-  color: #666;
+}
+
+.footer a {
+  color: #4CAF50;
+  text-decoration: none;
+}
+
+.footer a:hover {
+  text-decoration: underline;
 }

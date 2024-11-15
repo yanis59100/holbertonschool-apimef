@@ -1,4 +1,4 @@
-/* Global Styles */
+/* Styles généraux */
 body {
   font-family: Arial, sans-serif;
   margin: 0;
@@ -8,11 +8,20 @@ body {
   background-color: #f9f9f9;
 }
 
-/* Navigation */
+a {
+  color: #0066cc;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* Barre de navigation */
 nav {
-  background-color: #4caf50;
+  background-color: #4CAF50;
   color: white;
-  padding: 10px 20px;
+  padding: 10px 0;
 }
 
 nav ul {
@@ -20,119 +29,67 @@ nav ul {
   margin: 0;
   padding: 0;
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
 }
 
 nav ul li {
-  display: inline;
+  margin: 0 15px;
 }
 
 nav ul li a {
   color: white;
-  text-decoration: none;
   font-weight: bold;
 }
 
 nav ul li a:hover {
-  text-decoration: underline;
+  color: #ffcc00;
 }
 
-/* Header */
+/* En-tête */
 header {
   text-align: center;
-  padding: 20px;
-  background-color: #f1f1f1;
+  background: url('/apimef/img/apimef.jpg') no-repeat center/cover;
+  padding: 150px 20px;
 }
 
 header h1 {
-  margin: 0;
   font-size: 2.5em;
-  color: #4caf50;
+  margin-bottom: 10px;
 }
 
 header p {
   font-size: 1.2em;
 }
 
-/* Main Content */
+/* Contenu principal */
 main {
   padding: 20px;
 }
 
-main h2, main h3 {
-  color: #4caf50;
-}
-
-ol {
-  padding-left: 20px;
-}
-
-section {
-  margin-bottom: 30px;
-}
-
-/* Image */
-section img {
-  display: block;
-  margin: 10px auto;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-/* Table Styles */
-.styled-table {
-  width: 100%;
-  border-collapse: collapse;
-  margin: 20px 0;
-  font-size: 1em;
-  text-align: left;
-  border: 1px solid #ddd;
-}
-
-.styled-table thead tr {
-  background-color: #4caf50;
-  color: white;
-}
-
-.styled-table th, .styled-table td {
-  padding: 12px 15px;
-  border: 1px solid #ddd;
-}
-
-.styled-table tbody tr:nth-child(even) {
-  background-color: #f3f3f3;
-}
-
-.styled-table tbody tr:hover {
-  background-color: #f1f1f1;
-}
-
-/* Video */
-video {
-  display: block;
-  margin: 20px auto;
-  border: 1px solid #ddd;
-  border-radius: 10px;
-}
-
-/* Form Styles */
-form {
-  background-color: #fff;
+section#form {
+  background: white;
   padding: 20px;
-  border: 1px solid #ddd;
-  border-radius: 5px;
-  max-width: 500px;
-  margin: 0 auto;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin: 20px auto;
+  max-width: 600px;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
+section#form h2 {
+  margin-bottom: 20px;
+  color: #333;
+}
+
+/* Formulaire */
 form label {
   display: block;
-  margin-bottom: 5px;
+  margin-bottom: 8px;
   font-weight: bold;
 }
 
-form input, form select, form textarea {
+form input,
+form select,
+form textarea {
   width: 100%;
   padding: 10px;
   margin-bottom: 15px;
@@ -141,46 +98,47 @@ form input, form select, form textarea {
   font-size: 1em;
 }
 
-form input[type="submit"] {
-  background-color: #4caf50;
+form input:focus,
+form select:focus,
+form textarea:focus {
+  border-color: #0066cc;
+  outline: none;
+}
+
+form button {
+  background-color: #0066cc;
   color: white;
   border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
   cursor: pointer;
-  font-size: 1.2em;
+  font-size: 1em;
 }
 
-form input[type="submit"]:hover {
-  background-color: #45a049;
+form button:hover {
+  background-color: #004a99;
 }
 
-/* Footer */
-footer {
-  text-align: center;
-  padding: 20px;
-  background-color: #4caf50;
-  color: white;
-  position: relative;
-  bottom: 0;
-  width: 100%;
+form a {
+  color: #0066cc;
 }
 
-footer a {
-  color: white;
+form a:hover {
   text-decoration: underline;
 }
 
-footer a:hover {
-  text-decoration: none;
+/* Pied de page */
+footer {
+  text-align: center;
+  padding: 10px;
+  background-color: #333;
+  color: white;
 }
 
-/* Responsive Design */
-@media (max-width: 768px) {
-  nav ul {
-    flex-direction: column;
-    text-align: center;
-  }
+footer a {
+  color: #ffcc00;
+}
 
-  form {
-    width: 90%;
-  }
+footer a:hover {
+  text-decoration: underline;
 }

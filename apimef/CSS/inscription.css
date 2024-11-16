@@ -10,7 +10,7 @@ body {
 
 /* Navigation */
 nav {
-  background-color: #4CAF50;
+  background-color: #af995d;
   padding: 1rem 0;
 }
 
@@ -28,7 +28,7 @@ nav ul li {
 
 nav ul li a {
   text-decoration: none;
-  color: #fff;
+  color: #ffffff;
   font-weight: bold;
   transition: color 0.3s;
 }

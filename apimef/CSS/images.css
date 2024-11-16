@@ -1,12 +1,11 @@
 /* Style global */
 body {
-  font-family: Arial, sans-serif;
-  line-height: 1.6;
-  margin: 0;
-  padding: 0;
-  background-color: #ffffff;
-  color: #333;
-}
+  color:black;
+  background-color:white;
+  background-image: url(/apimef/img/téléchargement.jpg);
+  background-attachment: fixed;
+  margin:0;
+  }
 
 nav {
   background-color: #4CAF50;

@@ -25,18 +25,12 @@
 
     <!-- En-tête -->
       <h1>Bienvenue sur Apimef</h1>
-      <p>
-        Apimef vous présente l'univers de l'apiculture avec du miel 100% bio, directement issu de nos ruches.
-      </p>
+      <p>Apimef vous présente l'univers de l'apiculture et vous propose du miel 100% bio, directement issu de nos ruches.</p>
 
       <h3>Actualités</h3>
       <div>
-      <img src="/apimef/img/promo.jpeg" alt="promo">
+      <img src="/apimef/img/téléchargement (1).jpg" alt="promo">
       <p>Promo sur le miel de tilleul</p>
-      </div>
-      <div>
-      <img src="/apimef/img/attaque.jpeg" alt="ruches attaqués">
-      <p>Plusieurs ruches ont été attaqués cette nuits à Roubaix</p>
       </div>
       <div>
       <img src="/apimef/img/hiver.jpeg" alt="hivers">
@@ -45,6 +39,9 @@
 
     <!-- Contenu principal -->
     <main>
+      <video id="video_background" preload="auto" autoplay="true" loop="loop" muted="muted" volume="volume">
+        <source src="/apimef/img/178049-858827907_small.mp4" type="video/mp4">
+      </video>
       <!-- Section : Formulaire de contact -->
       <section id="form" aria-labelledby="form-title">
         <h2 id="form-title">Formulaire de contact</h2>
@@ -99,8 +96,7 @@
           <!-- Conditions générales -->
           <input type="checkbox" id="cgv" name="cgv" required />
           <label for="cgv">J'accepte les <a href="cgv.html" target="_blank">conditions générales</a></label>
-          <br />
-
+          <br>
           <!-- Bouton de soumission -->
           <button type="submit">Envoyer</button>
         </form>

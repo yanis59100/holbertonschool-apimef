@@ -1,21 +1,27 @@
-/* Général */
+/* Style global */
 body {
-  font-family: Arial, sans-serif;
+  font-family: 'Arial', sans-serif;
   margin: 0;
   padding: 0;
+  background-color: #f4f4f4;
+  color: #333;
   line-height: 1.6;
-  background-color: #f4f4f9;
-  color: #000000;
+  transition: background-color 0.3s ease;
+}
+
+body:hover {
+  background-color: #e8f4e8;
 }
 
 /* Navigation */
 nav {
   background-color: #af995d;
-  padding: 1rem 0;
+  padding: 1.5em 0;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 nav ul {
-  list-style: none;
+  list-style-type: none;
   margin: 0;
   padding: 0;
   display: flex;
@@ -23,67 +29,186 @@ nav ul {
 }
 
 nav ul li {
-  margin: 0 15px;
+  margin: 0 20px;
 }
 
 nav ul li a {
-  color: white;
   text-decoration: none;
-  font-size: 1.2rem;
+  color: white;
+  font-weight: bold;
+  font-size: 1.1em;
+  text-transform: uppercase;
+  padding: 5px 15px;
+  display: inline-block;
+  transition: all 0.3s ease;
 }
 
 nav ul li a:hover {
-  color: #f4f4f9;
-  text-decoration: underline;
+  color: #FFD700;
+  background-color: #6f4f24;
+  border-radius: 5px;
+  transform: scale(1.1);
 }
 
-/* Table */
-.styled-table {
-  width: 80%;
-  margin: 20px auto;
-  border-collapse: collapse;
-  font-size: 1rem;
-  text-align: left;
-}
-
-.styled-table thead tr {
-  background-color: #333;
-  color: white;
+/* Section des articles */
+h4 {
   text-align: center;
+  font-size: 2em;
+  margin-top: 40px;
+  color: #4CAF50;
+  transition: color 0.3s ease;
 }
 
-.styled-table th,
-.styled-table td {
-  padding: 12px 15px;
+h4:hover {
+  color: #388E3C;
 }
 
-.styled-table tbody tr {
-  border-bottom: 1px solid #ddd;
+/* Articles */
+.articles, .article {
+  background-color: white;
+  border-radius: 15px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  margin: 20px;
+  padding: 20px;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: inline-block;
+  width: calc(25% - 40px);
+  box-sizing: border-box;
 }
 
-.styled-table tbody tr:nth-of-type(even) {
-  background-color: #f3f3f3;
+.articles:hover, .article:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
 }
 
-.styled-table tbody tr:last-of-type {
-  border-bottom: 2px solid #333;
+/* Image des articles */
+.articles img, .article img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  transition: transform 0.3s ease, opacity 0.3s ease;
 }
 
-.styled-table tbody tr:hover {
-  background-color: #f1f1f1;
+.articles img:hover, .article img:hover {
+  transform: scale(1.05);
+  opacity: 0.8;
 }
 
+/* Prix des articles */
+.articles span, .article span {
+  display: block;
+  margin-top: 10px;
+  font-size: 1.2em;
+  color: #333;
+}
+
+/* Bouton "Ajouter au panier" */
+button {
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  margin-top: 10px;
+  border-radius: 5px;
+  font-size: 1.1em;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+button:hover {
+  background-color: #388E3C;
+  transform: scale(1.1);
+}
+
+button:active {
+  transform: scale(1);
+}
+
+/* Section Panier */
+.panier {
+  background-color: #fff;
+  padding: 20px;
+  margin-top: 40px;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.panier h2 {
+  text-align: center;
+  font-size: 2em;
+  color: #4CAF50;
+  margin-bottom: 20px;
+}
+
+#panierListe {
+  list-style-type: none;
+  padding: 0;
+}
+
+#panierListe li {
+  font-size: 1.1em;
+  margin: 10px 0;
+}
+
+#totalPrix {
+  font-weight: bold;
+  font-size: 1.5em;
+  color: #4CAF50;
+}
+
+.panier button {
+  background-color: #4CAF50;
+  color: white;
+  padding: 15px 25px;
+  font-size: 1.2em;
+  border: none;
+  border-radius: 5px;
+  width: 100%;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.panier button:hover {
+  background-color: #388E3C;
+  transform: scale(1.1);
+}
+
+/* Footer */
 footer {
   text-align: center;
-  padding: 10px;
   background-color: #333;
   color: white;
+  padding: 20px;
+  box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.2);
 }
 
 footer a {
   color: #ffcc00;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s ease, transform 0.3s ease;
 }
 
 footer a:hover {
+  color: #FFD700;
   text-decoration: underline;
+  transform: scale(1.1);
+}
+
+/* Animation de fond de page */
+@keyframes backgroundAnimation {
+  0% {
+    background-color: #f4f4f4;
+  }
+  50% {
+    background-color: #e8f4e8;
+  }
+  100% {
+    background-color: #f4f4f4;
+  }
+}
+
+body {
+  animation: backgroundAnimation 6s infinite;
 }

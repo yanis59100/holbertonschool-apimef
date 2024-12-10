@@ -1,110 +1,164 @@
-/* connexion.css */
-
-/* Style général */
+/* Style global */
 body {
-  font-family: Arial, sans-serif;
+  font-family: 'Arial', sans-serif;
   margin: 0;
   padding: 0;
-  background-color: #f9f9f9;
+  background-color: #f4f4f4;
   color: #333;
+  line-height: 1.6;
+  transition: background-color 0.3s ease;
 }
 
-h1 {
-  text-align: center;
-  color: #4CAF50;
+/* Transition du fond de la page */
+body:hover {
+  background-color: #e8f4e8;
 }
 
 /* Navigation */
 nav {
   background-color: #af995d;
-  padding: 1em 0;
+  padding: 1.5em 0;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 nav ul {
-  list-style: none;
+  list-style-type: none;
   margin: 0;
   padding: 0;
   display: flex;
   justify-content: center;
-  gap: 20px;
 }
 
 nav ul li {
-  display: inline;
+  margin: 0 20px;
 }
 
 nav ul li a {
   text-decoration: none;
   color: white;
   font-weight: bold;
-  padding: 5px 10px;
-  border-radius: 5px;
+  font-size: 1.1em;
+  text-transform: uppercase;
+  padding: 5px 15px;
+  display: inline-block;
+  transition: all 0.3s ease;
 }
 
 nav ul li a:hover {
-  background-color: #3e8e41;
+  color: #FFD700;
+  background-color: #6f4f24;
+  border-radius: 5px;
+  transform: scale(1.1);
 }
 
-/* Conteneur principal */
+/* Section container */
 .container {
-  max-width: 500px;
+  max-width: 400px;
   margin: 50px auto;
   background-color: white;
-  padding: 20px;
+  padding: 30px;
   border-radius: 10px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.container h1 {
+  font-size: 2em;
+  color: #4CAF50;
+  margin-bottom: 20px;
+  transition: color 0.3s ease;
+}
+
+.container h1:hover {
+  color: #388E3C;
 }
 
 /* Formulaire */
 form {
   display: flex;
   flex-direction: column;
-  gap: 15px;
 }
 
 label {
-  font-weight: bold;
+  font-size: 1.1em;
+  margin-bottom: 10px;
+  color: #333;
+  text-align: left;
 }
 
 input {
-  padding: 10px;
-  border: 1px solid #ccc;
+  padding: 12px;
+  margin-bottom: 15px;
   border-radius: 5px;
-  font-size: 16px;
+  border: 1px solid #ddd;
+  font-size: 1em;
+  transition: border 0.3s ease, transform 0.3s ease;
 }
 
 input:focus {
-  border-color: #4CAF50;
   outline: none;
-  box-shadow: 0 0 5px rgba(76, 175, 80, 0.5);
+  border: 1px solid #4CAF50;
+  transform: scale(1.05);
 }
 
+/* Bouton de soumission */
 button {
   background-color: #4CAF50;
   color: white;
-  padding: 10px;
-  font-size: 16px;
   border: none;
+  padding: 12px;
+  font-size: 1.1em;
   border-radius: 5px;
   cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
 button:hover {
-  background-color: #45a049;
+  background-color: #388E3C;
+  transform: scale(1.1);
 }
 
-/* Pied de page */
+button:active {
+  transform: scale(1);
+}
+
+/* Footer */
+.footer {
+  margin-top: 20px;
+  font-size: 1em;
+}
+
+.footer a {
+  text-decoration: none;
+  color: #4CAF50;
+  font-weight: bold;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.footer a:hover {
+  color: #388E3C;
+  text-decoration: underline;
+  transform: scale(1.1);
+}
+
+/* Footer */
 footer {
   text-align: center;
-  padding: 10px;
   background-color: #333;
   color: white;
+  padding: 20px;
+  box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.2);
 }
 
 footer a {
   color: #ffcc00;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s ease, transform 0.3s ease;
 }
 
 footer a:hover {
+  color: #FFD700;
   text-decoration: underline;
+  transform: scale(1.1);
 }

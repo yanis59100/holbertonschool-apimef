@@ -1,15 +1,25 @@
 /* Style global */
 body {
-  color:black;
-  background-color:white;
-  background-image: url(/apimef/img/téléchargement.jpg);
+  color: black;
+  background-color: white;
+  background-image: url('/apimef/img/téléchargement.jpg');
   background-attachment: fixed;
-  margin:0;
-  }
+  margin: 0;
+  font-family: 'Arial', sans-serif;
+  transition: background-color 0.5s ease, color 0.5s ease;
+}
 
+/* Effet de survol sur le `body` */
+body:hover {
+  background-color: #f0f0f0;
+  color: #333;
+}
+
+/* Menu de navigation */
 nav {
   background-color: #af995d;
-  padding: 1em 0;
+  padding: 1.5em 0;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 nav ul {
@@ -28,84 +38,100 @@ nav ul li a {
   text-decoration: none;
   color: white;
   font-weight: bold;
-  transition: color 0.3s ease;
+  font-size: 1.1em;
+  text-transform: uppercase;
+  transition: color 0.3s ease, transform 0.3s ease;
 }
 
 nav ul li a:hover {
   color: #FFD700;
+  transform: scale(1.1);
 }
 
-/* Titre de sections */
+/* Titre des sections */
 h3 {
   margin-top: 2em;
   text-align: center;
   color: #4CAF50;
+  font-size: 2em;
+  letter-spacing: 2px;
+  transition: color 0.3s ease, transform 0.3s ease;
 }
 
-/* Image */
+h3:hover {
+  color: #388E3C;
+  transform: translateY(-10px);
+}
+
+/* Galerie d'images */
 .container {
-  margin: 100px 0 0 200px;
-  width: 70%;
-  height: 450px;
+  margin: 50px 0;
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
-  gap: 10px;
+  gap: 20px;
 }
 
 .container img {
-  width: 10%;
-  height: 100%;
+  width: 200px;
+  height: 200px;
   object-fit: cover;
   border-radius: 10px;
   border: 2px solid rgba(255, 255, 255, 0.684);
-  transition: all ease-in-out 0.5s;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .container img:hover {
-  width: 25%;
+  transform: scale(1.1);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
 }
 
-/* Vidéo */
-video {
-  display: block;
-  margin: 1em auto;
-  border: 2px solid #4CAF50;
-  border-radius: 10px;
-}
-
+/* Galerie de vidéos */
 .containner {
-  margin: 100px 0 0 200px;
-  width: 70%;
-  height: 450px;
+  margin: 50px 0;
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
-  gap: 10px;
+  gap: 20px;
 }
 
-.containner video{
-  width: 10%;
-  height: 100%;
-  object-fit: cover;
+.containner video {
+  width: 200px;
+  height: 200px;
   border-radius: 10px;
   border: 2px solid rgba(255, 255, 255, 0.684);
-  transition: all ease-in-out 0.5s;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .containner video:hover {
-  width: 25%;
+  transform: scale(1.1);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
 }
 
+/* Footer */
 footer {
   text-align: center;
-  padding: 10px;
+  padding: 20px;
   background-color: #333;
   color: white;
+  position: relative;
+  box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.1);
 }
 
 footer a {
   color: #ffcc00;
+  font-weight: bold;
+  text-decoration: none;
+  transition: color 0.3s ease, transform 0.3s ease;
 }
 
 footer a:hover {
   text-decoration: underline;
+  color: #ffeb3b;
+  transform: scale(1.2);
+}
+
+/* Animation de transition de fond */
+footer:hover {
+  background-color: #555;
 }

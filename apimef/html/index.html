@@ -21,33 +21,37 @@
       </ul>
     </nav>
 
-    <header id="home" role="banner"></header>
-    <div class="container">
-    <img src="/apimef/img/image miel/abeilles.jpg" alt="abeilles">
-    <img src="/apimef/img/image miel/cadre.jpg" alt="cadre">
-    <img src="/apimef/img/image miel/miel.jpg" alt="miel">
-    <img src="/apimef/img/image miel/pollen.jpg" alt="pollen">
-    </div>
-    <!-- En-tête -->
+    <!-- Bannière avec des images -->
+    <header id="home" role="banner">
+      <div class="container">
+        <img src="/apimef/img/image miel/abeilles.jpg" alt="Des abeilles butinant sur des fleurs" />
+        <img src="/apimef/img/image miel/cadre.jpg" alt="Un cadre de ruche avec des abeilles" />
+        <img src="/apimef/img/image miel/miel.jpg" alt="Pot de miel biologique" />
+        <img src="/apimef/img/image miel/pollen.jpg" alt="Pollen récolté par les abeilles" />
+      </div>
+    </header>
+
+    <!-- Introduction -->
+    <section id="introduction">
       <h1>Bienvenue sur Apimef</h1>
       <p>Apimef vous présente l'univers de l'apiculture et vous propose du miel 100% bio, directement issu de nos ruches.</p>
+    </section>
 
+    <!-- Actualités -->
+    <section id="actualites">
       <h3>Actualités</h3>
       <div>
-      <img src="/apimef/img/téléchargement (1).jpg" alt="promo">
-      <p>Promo sur le miel de tilleul</p>
+        <img src="/apimef/img/téléchargement (1).jpg" alt="Promo sur le miel de tilleul" />
+        <p>Promo sur le miel de tilleul</p>
       </div>
       <div>
-      <img src="/apimef/img/hiver.jpeg" alt="hivers">
-      <p>L'hiver approche, n'oublier pas de couvrir vos ruches et de nourrire vos abeilles</p>
+        <img src="/apimef/img/hiver.jpeg" alt="Préparation des ruches pour l'hiver" />
+        <p>L'hiver approche, n'oubliez pas de couvrir vos ruches et de nourrir vos abeilles.</p>
       </div>
+    </section>
 
-    <!-- Contenu principal -->
+    <!-- Formulaire de contact -->
     <main>
-      <video id="video_background" preload="auto" autoplay="true" loop="loop" muted="muted" volume="volume">
-        <source src="/apimef/img/178049-858827907_small.mp4" type="video/mp4">
-      </video>
-      <!-- Section : Formulaire de contact -->
       <section id="form" aria-labelledby="form-title">
         <h2 id="form-title">Formulaire de contact</h2>
         <form action="submit_form.php" method="post">
@@ -59,7 +63,7 @@
           </select>
           <br />
 
-          <!-- Nom -->
+          <!-- Nom et prénom -->
           <label for="name">Nom</label>
           <input
             type="text"
@@ -70,12 +74,13 @@
             required
           />
           <br />
-          <label for="name">Prenom</label>
+          
+          <label for="Prenom">Prénom</label>
           <input
             type="text"
             id="Prenom"
             name="Prenom"
-            placeholder="Entrez votre prenom"
+            placeholder="Entrez votre prénom"
             aria-required="true"
             required
           />

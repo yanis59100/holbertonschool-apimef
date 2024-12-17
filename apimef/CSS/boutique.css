@@ -1,214 +1,220 @@
-/* Style global */
-body {
-  font-family: 'Arial', sans-serif;
+/* RESET de base */
+*,
+*::before,
+*::after {
   margin: 0;
   padding: 0;
-  background-color: #f4f4f4;
-  color: #333;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Helvetica', 'Arial', sans-serif;
   line-height: 1.6;
-  transition: background-color 0.3s ease;
+  background-color: #fafafa; /* Fond clair */
+  color: #333;
+  padding: 20px;
+  margin: 0;
 }
 
-body:hover {
-  background-color: #e8f4e8;
+/* Liens */
+a {
+  color: #4c9d7f;
+  text-decoration: none;
+  transition: color 0.3s ease;
 }
 
-/* Navigation */
+a:hover {
+  color: #264653;
+}
+
+/* Barre de navigation */
 nav {
-  background-color: #af995d;
-  padding: 1.5em 0;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  background-color: #264653;
+  padding: 1rem 2rem;
+  border-radius: 8px;
+  margin-bottom: 2rem;
 }
 
 nav ul {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
   display: flex;
   justify-content: center;
+  list-style: none;
 }
 
 nav ul li {
-  margin: 0 20px;
+  margin: 0 1rem;
 }
 
 nav ul li a {
-  text-decoration: none;
   color: white;
-  font-weight: bold;
-  font-size: 1.1em;
-  text-transform: uppercase;
-  padding: 5px 15px;
-  display: inline-block;
-  transition: all 0.3s ease;
+  font-weight: 500;
+  font-size: 1.1rem;
+  transition: transform 0.3s ease;
 }
 
 nav ul li a:hover {
-  color: #FFD700;
-  background-color: #6f4f24;
-  border-radius: 5px;
+  color: #e9c46a;
   transform: scale(1.1);
 }
 
 /* Section des articles */
-h4 {
-  text-align: center;
-  font-size: 2em;
-  margin-top: 40px;
-  color: #4CAF50;
-  transition: color 0.3s ease;
-}
-
-h4:hover {
-  color: #388E3C;
-}
-
-/* Articles */
 .articles, .article {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   background-color: white;
-  border-radius: 15px;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-  margin: 20px;
-  padding: 20px;
-  text-align: center;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  display: inline-block;
-  width: calc(25% - 40px);
-  box-sizing: border-box;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  margin-bottom: 2rem;
+  padding: 1rem;
 }
 
-.articles:hover, .article:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
-}
-
-/* Image des articles */
 .articles img, .article img {
   width: 100%;
-  height: auto;
-  border-radius: 10px;
-  transition: transform 0.3s ease, opacity 0.3s ease;
+  max-width: 300px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-.articles img:hover, .article img:hover {
-  transform: scale(1.05);
-  opacity: 0.8;
-}
-
-/* Prix des articles */
 .articles span, .article span {
-  display: block;
-  margin-top: 10px;
-  font-size: 1.2em;
-  color: #333;
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-top: 1rem;
+  color: #264653;
 }
 
-/* Bouton "Ajouter au panier" */
 button {
-  background-color: #4CAF50;
+  background-color: #4c9d7f;
   color: white;
+  padding: 1rem 2rem;
+  font-size: 1.1rem;
   border: none;
-  padding: 10px 20px;
-  margin-top: 10px;
-  border-radius: 5px;
-  font-size: 1.1em;
+  border-radius: 4px;
   cursor: pointer;
-  transition: background-color 0.3s ease, transform 0.3s ease;
+  transition: background-color 0.3s ease;
+  margin-top: 1rem;
 }
 
 button:hover {
-  background-color: #388E3C;
-  transform: scale(1.1);
+  background-color: #264653;
 }
 
 button:active {
-  transform: scale(1);
+  background-color: #1d3d2b;
 }
 
-/* Section Panier */
+/* Panier */
 .panier {
-  background-color: #fff;
-  padding: 20px;
-  margin-top: 40px;
-  border-radius: 10px;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  background-color: #e9c46a;
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  text-align: center;
 }
 
 .panier h2 {
-  text-align: center;
-  font-size: 2em;
-  color: #4CAF50;
-  margin-bottom: 20px;
+  font-size: 2rem;
+  color: #264653;
+  margin-bottom: 1rem;
 }
 
 #panierListe {
-  list-style-type: none;
+  list-style: none;
   padding: 0;
-}
-
-#panierListe li {
-  font-size: 1.1em;
-  margin: 10px 0;
+  font-size: 1.1rem;
+  color: #333;
 }
 
 #totalPrix {
   font-weight: bold;
-  font-size: 1.5em;
-  color: #4CAF50;
+  color: #264653;
 }
 
-.panier button {
-  background-color: #4CAF50;
+button {
+  margin-top: 1.5rem;
+  padding: 1rem 2rem;
+  background-color: #264653;
   color: white;
-  padding: 15px 25px;
-  font-size: 1.2em;
-  border: none;
-  border-radius: 5px;
-  width: 100%;
+  font-size: 1.2rem;
+  border-radius: 4px;
   cursor: pointer;
-  transition: background-color 0.3s ease, transform 0.3s ease;
+  border: none;
+  transition: background-color 0.3s ease;
 }
 
-.panier button:hover {
-  background-color: #388E3C;
-  transform: scale(1.1);
+button:hover {
+  background-color: #4c9d7f;
 }
 
-/* Footer */
+/* Pied de page */
 footer {
   text-align: center;
-  background-color: #333;
+  padding: 2rem;
+  background-color: #264653;
   color: white;
-  padding: 20px;
-  box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.2);
+  border-radius: 8px;
+  margin-top: 4rem;
 }
 
-footer a {
-  color: #ffcc00;
-  text-decoration: none;
-  font-weight: bold;
-  transition: color 0.3s ease, transform 0.3s ease;
+footer p {
+  font-size: 1rem;
 }
 
-footer a:hover {
-  color: #FFD700;
-  text-decoration: underline;
-  transform: scale(1.1);
-}
-
-/* Animation de fond de page */
-@keyframes backgroundAnimation {
-  0% {
-    background-color: #f4f4f4;
+/* Réactivité pour les écrans plus petits */
+@media (max-width: 768px) {
+  nav ul {
+    flex-direction: column;
+    align-items: center;
   }
-  50% {
-    background-color: #e8f4e8;
+
+  .articles, .article {
+    flex-direction: column;
+    align-items: center;
+    padding: 1.5rem;
   }
-  100% {
-    background-color: #f4f4f4;
+
+  .articles img, .article img {
+    max-width: 250px;
+  }
+
+  .panier {
+    padding: 1.5rem;
+  }
+
+  #panierListe {
+    font-size: 1rem;
+  }
+
+  button {
+    font-size: 1.1rem;
+    padding: 0.8rem 1.6rem;
   }
 }
 
-body {
-  animation: backgroundAnimation 6s infinite;
+@media (max-width: 480px) {
+  body {
+    padding: 15px;
+  }
+
+  nav ul li a {
+    font-size: 1rem;
+  }
+
+  .articles img, .article img {
+    max-width: 100%;
+  }
+
+  .panier h2 {
+    font-size: 1.8rem;
+  }
+
+  button {
+    font-size: 1rem;
+    padding: 0.8rem 1.4rem;
+  }
 }

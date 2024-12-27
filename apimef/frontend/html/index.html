@@ -10,7 +10,7 @@
   <body>
     <nav aria-label="Navigation principale">
       <ul>
-        <li><a href="index">Accueil</a></li>
+        <li><a href="/">Accueil</a></li>
         <li><a href="boutique">Boutique</a></li>
         <li><a href="images">Galerie</a></li>
         <li><a href="inscription">Inscription</a></li>
@@ -59,20 +59,16 @@
       <p>&copy; 2024 Apimef. Tous droits réservés.</p>
     </footer>
 
-    <!-- Ajouter un script JavaScript pour interagir avec l'API -->
     <script>
-      // Fonction pour récupérer les produits depuis l'API
       async function fetchProduits() {
         try {
           const response = await fetch('http://localhost:3000/produits');
           const produits = await response.json();
 
-          // Sélectionner l'élément où nous allons afficher les produits
           const produitList = document.getElementById('produit-list');
           produitList.innerHTML = '';
 
           produits.forEach(produit => {
-            // Créer un élément pour chaque produit
             const produitElement = document.createElement('div');
             produitElement.classList.add('produit');
             produitElement.innerHTML = `
@@ -83,7 +79,6 @@
               <img src="${produit.image}" alt="${produit.nom}" />
             `;
 
-            // Ajouter l'élément à la liste
             produitList.appendChild(produitElement);
           });
         } catch (error) {
@@ -91,7 +86,6 @@
         }
       }
 
-      // Appeler la fonction pour récupérer les produits dès que la page est chargée
       window.onload = fetchProduits;
     </script>
   </body>

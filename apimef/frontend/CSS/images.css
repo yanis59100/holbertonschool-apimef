@@ -1,4 +1,4 @@
-/* RESET de base */
+
 *,
 *::before,
 *::after {
@@ -21,7 +21,7 @@ body {
   margin: 0;
 }
 
-/* Liens */
+
 a {
   color: #4c9d7f;
   text-decoration: none;
@@ -32,7 +32,7 @@ a:hover {
   color: #264653;
 }
 
-/* Barre de navigation */
+
 nav {
   background-color: #264653;
   padding: 1rem 2rem;
@@ -62,7 +62,7 @@ nav ul li a:hover {
   transform: scale(1.1);
 }
 
-/* Titre de la galerie */
+
 h3 {
   font-size: 2rem;
   color: #264653;
@@ -71,7 +71,7 @@ h3 {
   margin-bottom: 2rem;
 }
 
-/* Conteneur des images */
+
 .container {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
@@ -88,7 +88,7 @@ h3 {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-/* Conteneur des vidéos */
+
 .containner {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
@@ -104,7 +104,7 @@ h3 {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-/* Pied de page */
+
 footer {
   text-align: center;
   padding: 2rem;
@@ -118,7 +118,7 @@ footer p {
   font-size: 1rem;
 }
 
-/* Réactivité pour les écrans plus petits */
+
 @media (max-width: 768px) {
   .container, .containner {
     grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));

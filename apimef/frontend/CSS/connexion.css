@@ -1,4 +1,4 @@
-/* RESET de base */
+
 *,
 *::before,
 *::after {
@@ -21,7 +21,7 @@ body {
   margin: 0;
 }
 
-/* Liens */
+
 a {
   color: #4c9d7f;
   text-decoration: none;
@@ -32,7 +32,7 @@ a:hover {
   color: #264653;
 }
 
-/* Barre de navigation */
+
 nav {
   background-color: #264653;
   padding: 1rem 2rem;
@@ -62,7 +62,7 @@ nav ul li a:hover {
   transform: scale(1.1);
 }
 
-/* Container de la page de connexion */
+
 .container {
   max-width: 600px;
   margin: 0 auto;
@@ -136,7 +136,7 @@ form button:hover {
   color: #264653;
 }
 
-/* Pied de page */
+
 footer {
   text-align: center;
   padding: 2rem;
@@ -150,7 +150,7 @@ footer p {
   font-size: 1rem;
 }
 
-/* Réactivité pour les petits écrans */
+
 @media (max-width: 768px) {
   body {
     padding: 15px;

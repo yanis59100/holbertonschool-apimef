@@ -1,4 +1,3 @@
-/* RESET de base */
 *,
 *::before,
 *::after {
@@ -15,13 +14,12 @@ html {
 body {
   font-family: 'Helvetica', 'Arial', sans-serif;
   line-height: 1.6;
-  background-color: #fafafa; /* Fond clair */
+  background-color: #fafafa;
   color: #333;
   padding: 20px;
   margin: 0;
 }
 
-/* Liens */
 a {
   color: #4c9d7f;
   text-decoration: none;
@@ -32,7 +30,7 @@ a:hover {
   color: #264653;
 }
 
-/* Barre de navigation */
+
 nav {
   background-color: #264653;
   padding: 1rem 2rem;
@@ -62,7 +60,7 @@ nav ul li a:hover {
   transform: scale(1.1);
 }
 
-/* Section des articles */
+
 .articles, .article {
   display: flex;
   flex-direction: column;
@@ -108,7 +106,7 @@ button:active {
   background-color: #1d3d2b;
 }
 
-/* Panier */
+
 .panier {
   background-color: #e9c46a;
   padding: 2rem;
@@ -151,7 +149,7 @@ button:hover {
   background-color: #4c9d7f;
 }
 
-/* Pied de page */
+
 footer {
   text-align: center;
   padding: 2rem;
@@ -165,7 +163,7 @@ footer p {
   font-size: 1rem;
 }
 
-/* Réactivité pour les écrans plus petits */
+
 @media (max-width: 768px) {
   nav ul {
     flex-direction: column;

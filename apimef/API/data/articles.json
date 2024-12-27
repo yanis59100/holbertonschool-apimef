@@ -1,0 +1,23 @@
+[
+    {
+      "name": "Miel de tilleul",
+      "price": 12,
+      "image": "/apimef/img/image miel/IMG-20241116-WA0002.jpg"
+    },
+    {
+      "name": "Miel de printemps",
+      "price": 10,
+      "image": "/apimef/img/image miel/IMG-20241116-WA0004.jpg"
+    },
+    {
+      "name": "Miel d'été",
+      "price": 10,
+      "image": "/apimef/img/image miel/IMG-20241116-WA0003.jpg"
+    },
+    {
+      "name": "Miel de colza",
+      "price": 10,
+      "image": "/apimef/img/image miel/IMG-20241116-WA0001.jpg"
+    }
+  ]
+  

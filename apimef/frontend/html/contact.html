@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Apimef - Apiculture et Miel Bio</title>
+    <link rel="shortcut icon" href="/apimef/img/apimef.jpg" type="image/png" />
+    <link rel="stylesheet" href="/apimef/frontend/CSS/contact.css" />
+  </head>
+  <body>
+    <nav aria-label="Navigation principale">
+      <ul>
+        <li><a href="/">Accueil</a></li>
+        <li><a href="boutique">Boutique</a></li>
+        <li><a href="images">Galerie</a></li>
+        <li><a href="inscription">Inscription</a></li>
+        <li><a href="connexion">Connexion</a></li>
+        <li><a href="contact">Contact</a></li>
+      </ul>
+    </nav>
+
+    <main>
+      <section id="form" aria-labelledby="form-title">
+        <h2 id="form-title">Formulaire de contact</h2>
+        <form action="submit_form.php" method="post">
+          <label for="gender">Genre</label>
+          <select id="gender" name="gender" required>
+            <option value="Homme" selected>Monsieur</option>
+            <option value="Femme">Madame</option>
+          </select>
+          <br />
+
+          <label for="name">Nom</label>
+          <input
+            type="text"
+            id="name"
+            name="name"
+            placeholder="Entrez votre nom"
+            aria-required="true"
+            required
+          />
+          <br />
+          
+          <label for="Prenom">Prénom</label>
+          <input
+            type="text"
+            id="Prenom"
+            name="Prenom"
+            placeholder="Entrez votre prénom"
+            aria-required="true"
+            required
+          />
+          <br />
+
+          <label for="message">Votre message</label>
+          <textarea
+            id="message"
+            name="message"
+            placeholder="Votre message..."
+            cols="30"
+            rows="5"
+            aria-required="true"
+            required
+          ></textarea>
+          <br />
+
+          <input type="checkbox" id="cgv" name="cgv" required />
+          <label for="cgv">J'accepte les <a href="cgv.html" target="_blank">conditions générales</a></label>
+          <br>
+          <button type="submit">Envoyer</button>
+        </form>
+      </section>
+    </main>
+
+    <footer role="contentinfo">
+      <p>
+        Vous avez une question ? <a href="mailto:8845@holbertonstudents.com">Contactez-nous</a>
+      </p>
+      <p>&copy; 2024 Apimef. Tous droits réservés.</p>
+    </footer>
+  </body>
+</html>

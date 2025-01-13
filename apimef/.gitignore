@@ -1,2 +1,4 @@
 /backend/API/data
+/MYSQL/node_modules
+/backend/node_modules
 /backend/API/node_modules

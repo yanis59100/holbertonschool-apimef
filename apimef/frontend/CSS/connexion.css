@@ -1,106 +1,111 @@
-/* Reset Styles */
-*, *::before, *::after {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-html {
-  font-size: 16px;
-  scroll-behavior: smooth;
+:root {
+  --primary-color: #f1c40f;
+  --secondary-color: #2c3e50;
+  --accent-color: #e67e22;
+  --background-color: #ecf0f1;
 }
 
 body {
   font-family: 'Arial', sans-serif;
-  line-height: 1.6;
-  background-color: #f5f5f5;
-  color: #333;
-  padding: 20px;
+  background-color: var(--background-color);
+  margin: 0;
+  padding: 0;
+  color: var(--secondary-color);
 }
 
-a {
-  color: #4c9d7f;
-  text-decoration: none;
-  transition: color 0.3s ease;
-}
-
-a:hover {
-  color: #264653;
+header {
+  background-color: var(--secondary-color);
 }
 
 nav {
-  background-color: #264653;
-  padding: 1rem 2rem;
-  border-radius: 8px;
-  margin-bottom: 2rem;
+  padding: 15px 0;
 }
 
 nav ul {
   display: flex;
   justify-content: center;
-  list-style: none;
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
 }
 
-nav ul li {
-  margin: 0 1rem;
+nav li {
+  margin: 0 20px;
 }
 
-nav ul li a {
+nav a {
   color: white;
-  font-weight: 500;
-  font-size: 1.1rem;
-  transition: transform 0.3s ease;
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: bold;
+  transition: color 0.3s ease, transform 0.3s ease;
 }
 
-nav ul li a:hover {
-  color: #e9c46a;
+nav a:hover {
+  color: var(--primary-color);
   transform: scale(1.1);
 }
 
+main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: var(--background-color);
+  padding: 20px;
+}
+
 .container {
-  max-width: 500px;
-  margin: 2rem auto;
-  padding: 2rem;
   background-color: white;
+  padding: 40px;
   border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-.container h1 {
-  text-align: center;
-  font-size: 2rem;
-  color: #264653;
-  margin-bottom: 1.5rem;
-}
-
-label {
-  display: block;
-  font-size: 1rem;
-  color: #333;
-  margin-bottom: 0.5rem;
-}
-
-input {
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
   width: 100%;
-  padding: 0.8rem;
-  margin-bottom: 1.2rem;
-  border: 1px solid #ddd;
+  max-width: 400px;
+  text-align: center;
+  animation: fadeInUp 1s ease-out;
+}
+
+h1 {
+  font-size: 28px;
+  color: var(--primary-color);
+  margin-bottom: 20px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+form div {
+  text-align: left;
+}
+
+form label {
+  font-size: 16px;
+  font-weight: bold;
+  color: var(--secondary-color);
+}
+
+form input {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  border: 2px solid var(--secondary-color);
   border-radius: 4px;
-  font-size: 1rem;
   transition: border-color 0.3s ease;
 }
 
-input:focus {
-  border-color: #4c9d7f;
-  outline: none;
+form input:focus {
+  border-color: var(--primary-color);
 }
 
 button {
-  width: 100%;
-  background-color: #4c9d7f;
+  padding: 12px;
+  font-size: 16px;
+  background-color: var(--primary-color);
   color: white;
-  padding: 1rem;
-  font-size: 1.2rem;
   border: none;
   border-radius: 4px;
   cursor: pointer;
@@ -108,40 +113,79 @@ button {
 }
 
 button:hover {
-  background-color: #264653;
+  background-color: var(--accent-color);
 }
 
-button:active {
-  background-color: #1d3d2b;
+#errorMessage {
+  margin-top: 20px;
+  color: red;
+  font-size: 14px;
 }
 
 .footer {
-  text-align: center;
-  margin-top: 1.5rem;
-}
-
-.footer p {
-  font-size: 1rem;
-  color: #333;
+  margin-top: 20px;
+  font-size: 14px;
+  color: var(--secondary-color);
 }
 
 .footer a {
-  color: #4c9d7f;
+  color: var(--primary-color);
+  text-decoration: none;
+  transition: color 0.3s ease;
 }
 
 .footer a:hover {
-  color: #264653;
+  color: var(--accent-color);
 }
 
 footer {
-  text-align: center;
-  padding: 2rem;
-  background-color: #264653;
+  padding: 20px;
+  background-color: var(--secondary-color);
   color: white;
-  border-radius: 8px;
-  margin-top: 2rem;
+  text-align: center;
+  animation: fadeIn 2s ease-in-out;
 }
 
-footer p {
-  font-size: 1rem;
+footer p, footer a {
+  font-size: 16px;
+}
+
+footer a {
+  color: var(--primary-color);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+footer a:hover {
+  color: var(--accent-color);
+}
+
+footer ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+footer li {
+  display: inline;
+  margin: 0 10px;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeInUp {
+  0% {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
 }

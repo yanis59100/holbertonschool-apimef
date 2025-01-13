@@ -7,8 +7,8 @@
   <meta name="keywords" content="miel, boutique, vente, tilleul, printemps, été, colza">
   <title>Boutique - Apimef</title>
   <link rel="stylesheet" href="/apimef/frontend/CSS/boutique.css">
-  <script src="/apimef/frontend/Javascript/boutique.js"></script>
-  <link rel="shortcut icon" href="/apimef/img/apimef.jpg" type="image/png" />
+  <script src="/apimef/frontend/Javascript/boutique.js" defer></script>
+  <link rel="shortcut icon" href="/apimef/img/apimef.jpg" type="image/png">
 </head>
 <body>
   <header>
@@ -38,14 +38,16 @@
     </section>
 
     <h3>Nos Produits</h3>
-    
+
     <section class="articles">
       <article class="article">
         <img src="/apimef/img/image miel/IMG-20241116-WA0002.jpg" alt="Miel de tilleul en pot">
         <div class="info-article">
           <span>Miel de tilleul - Prix: 12€</span>
           <p>Le miel de tilleul, récolté au cœur de la saison estivale, se distingue par ses arômes délicats et son goût léger.</p>
-          <button onclick="ajouterAuPanier('Miel de tilleul', 12)" aria-label="Ajouter Miel de tilleul au panier">Ajouter au panier</button>
+          <label for="quantite-tilleul">Quantité :</label>
+          <input type="number" id="quantite-tilleul" value="1" min="1" aria-label="Quantité pour Miel de tilleul">
+          <button onclick="ajouterAuPanier('Miel de tilleul', 12, document.getElementById('quantite-tilleul').value)" aria-label="Ajouter Miel de tilleul au panier">Ajouter au panier</button>
         </div>
       </article>
 
@@ -54,7 +56,9 @@
         <div class="info-article">
           <span>Miel de printemps - Prix: 10€</span>
           <p>Le miel de printemps est récolté lors des premières floraisons de l'année, offrant un goût doux et floral qui plait à tous.</p>
-          <button onclick="ajouterAuPanier('Miel de printemps', 10)" aria-label="Ajouter Miel de printemps au panier">Ajouter au panier</button>
+          <label for="quantite-printemps">Quantité :</label>
+          <input type="number" id="quantite-printemps" value="1" min="1" aria-label="Quantité pour Miel de printemps">
+          <button onclick="ajouterAuPanier('Miel de printemps', 10, document.getElementById('quantite-printemps').value)" aria-label="Ajouter Miel de printemps au panier">Ajouter au panier</button>
         </div>
       </article>
 
@@ -63,7 +67,9 @@
         <div class="info-article">
           <span>Miel d'été - Prix: 10€</span>
           <p>Le miel d'été, récolté à la fin de la saison chaude, possède une richesse de saveurs qui varie selon les fleurs butinées par nos abeilles.</p>
-          <button onclick="ajouterAuPanier('Miel d été', 10)" aria-label="Ajouter Miel d'été au panier">Ajouter au panier</button>
+          <label for="quantite-ete">Quantité :</label>
+          <input type="number" id="quantite-ete" value="1" min="1" aria-label="Quantité pour Miel d'été">
+          <button onclick="ajouterAuPanier('Miel d\'été', 10, document.getElementById('quantite-ete').value)" aria-label="Ajouter Miel d'été au panier">Ajouter au panier</button>
         </div>
       </article>
 
@@ -72,7 +78,9 @@
         <div class="info-article">
           <span>Miel de colza - Prix: 10€</span>
           <p>Le miel de colza, très crémeux, est parfait pour ceux qui préfèrent un miel doux et fondant. Idéal sur du pain grillé ou dans vos boissons.</p>
-          <button onclick="ajouterAuPanier('Miel de colza', 10)" aria-label="Ajouter Miel de colza au panier">Ajouter au panier</button>
+          <label for="quantite-colza">Quantité :</label>
+          <input type="number" id="quantite-colza" value="1" min="1" aria-label="Quantité pour Miel de colza">
+          <button onclick="ajouterAuPanier('Miel de colza', 10, document.getElementById('quantite-colza').value)" aria-label="Ajouter Miel de colza au panier">Ajouter au panier</button>
         </div>
       </article>
     </section>
@@ -91,7 +99,7 @@
         <p>- Yanis M</p>
       </div>
       <div class="temoignage">
-        <p>"J'aime soutenir des producteurs locaux et Apimef est l'exemple parfait de l'apiculteure responsable."</p>
+        <p>"J'aime soutenir des producteurs locaux et Apimef est l'exemple parfait de l'apiculture responsable."</p>
         <p>- Lostyxs</p>
       </div>
     </section>
@@ -112,6 +120,35 @@
       <a href="politique-de-confidentialite.html">Politique de confidentialité</a> | <a href="termes-et-conditions.html">Termes et conditions</a>
     </div>
   </footer>
+
+  <script>
+    function ajouterAuPanier(produit, prix, quantite) {
+      quantite = parseInt(quantite, 10);
+      if (quantite < 1) {
+        alert("Veuillez entrer une quantité valide.");
+        return;
+      }
+
+      const panierListe = document.getElementById("panierListe");
+      const totalPrix = document.getElementById("totalPrix");
+
+      // Ajouter l'article au panier
+      const item = document.createElement("li");
+      item.textContent = `${quantite} x ${produit} - ${prix * quantite}€`;
+      panierListe.appendChild(item);
+
+      // Mettre à jour le total
+      const totalActuel = parseInt(totalPrix.textContent.replace("€", ""), 10);
+      const nouveauTotal = totalActuel + prix * quantite;
+      totalPrix.textContent = `${nouveauTotal}€`;
+    }
+
+    function finaliserAchat() {
+      alert("Merci pour votre achat !");
+      document.getElementById("panierListe").innerHTML = "";
+      document.getElementById("totalPrix").textContent = "0€";
+    }
+  </script>
 
 </body>
 </html>

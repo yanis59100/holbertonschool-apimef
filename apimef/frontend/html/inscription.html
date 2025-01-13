@@ -1,10 +1,13 @@
-<!DOCTYPE html>
+<!DOCTYPE html> 
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Page d'Inscription</title>
+    <meta name="description" content="Inscrivez-vous sur Apimef pour accéder à notre boutique en ligne, suivre votre commande et découvrir notre univers apicole.">
+    <meta name="keywords" content="inscription, Apimef, miel bio, boutique en ligne, apiculture, créer un compte">
+    <title>Page d'Inscription - Apimef</title>
     <link rel="stylesheet" href="/apimef/frontend/CSS/inscription.css">
+    <link rel="stylesheet" href="/apimef/frontend/Javascript/inscription.js">
     <link rel="shortcut icon" href="/apimef/img/apimef.jpg" type="image/png" />
 </head>
 <body>
@@ -21,36 +24,39 @@
 
   <div class="container">
     <h1>Inscription</h1>
-    <form action="submit_form.php" method="post">
+    <p>Créez un compte sur Apimef pour profiter d'une expérience personnalisée, suivre vos commandes et découvrir nos produits apicoles.</p>
+    
+    <form action="submit_form.php" method="post" id="inscription-form">
         <label for="nom">Nom :</label>
-        <input type="text" id="nom" name="nom" placeholder="Votre nom" required>
+        <input type="text" id="nom" name="nom" placeholder="Votre nom" required aria-label="Votre nom" aria-required="true">
 
         <label for="prenom">Prénom :</label>
-        <input type="text" id="prenom" name="prenom" placeholder="Votre prénom" required>
+        <input type="text" id="prenom" name="prenom" placeholder="Votre prénom" required aria-label="Votre prénom" aria-required="true">
 
         <label for="adresse">Adresse de Livraison :</label>
-        <input type="text" id="adresse" name="adresse" placeholder="Votre adresse" required>
+        <input type="text" id="adresse" name="adresse" placeholder="Votre adresse" required aria-label="Votre adresse de livraison" aria-required="true">
 
         <label for="ville">Ville de Livraison :</label>
-        <input type="text" id="ville" name="ville" placeholder="Votre ville" required>
+        <input type="text" id="ville" name="ville" placeholder="Votre ville" required aria-label="Votre ville de livraison" aria-required="true">
 
         <label for="code_postal">Code Postal :</label>
-        <input type="text" id="code_postal" name="code_postal" placeholder="Votre code postal" required>
+        <input type="text" id="code_postal" name="code_postal" placeholder="Votre code postal" required aria-label="Votre code postal" aria-required="true">
 
         <label for="email">Email :</label>
-        <input type="email" id="email" name="email" placeholder="Votre email" required>
+        <input type="email" id="email" name="email" placeholder="Votre email" required aria-label="Votre adresse email" aria-required="true">
 
         <label for="password">Mot de passe :</label>
-        <input type="password" id="password" name="password" placeholder="Votre mot de passe" required>
+        <input type="password" id="password" name="password" placeholder="Votre mot de passe" required autocomplete="new-password" aria-label="Votre mot de passe" aria-required="true">
 
         <label for="confirm_password">Confirmer votre mot de passe :</label>
-        <input type="password" id="confirm_password" name="confirm_password" placeholder="Confirmer votre mot de passe" required>
+        <input type="password" id="confirm_password" name="confirm_password" placeholder="Confirmer votre mot de passe" required autocomplete="new-password" aria-label="Confirmer votre mot de passe" aria-required="true">
 
         <button type="submit">S'inscrire</button>
     </form>
-
+        
     <div class="footer">
         <p>Déjà inscrit ? <a href="connexion">Connectez-vous ici</a>.</p>
+        <p>En vous inscrivant, vous acceptez nos <a href="cgv.html" target="_blank">Conditions Générales de Vente</a>.</p>
     </div>
   </div>
 
@@ -59,6 +65,14 @@
       Vous avez une question ? <a href="mailto:8845@holbertonstudents.com">Contactez-nous</a>
     </p>
     <p>&copy; 2024 Apimef. Tous droits réservés.</p>
+    <p>Suivez-nous sur :</p>
+    <ul>
+      <li><a href="https://facebook.com/Apimef" target="_blank" aria-label="Suivre Apimef sur Facebook">Facebook</a></li>
+      <li><a href="https://instagram.com/Apimef" target="_blank" aria-label="Suivre Apimef sur Instagram">Instagram</a></li>
+    </ul>
+    <div>
+      <a href="politique-de-confidentialite.html">Politique de confidentialité</a> | <a href="termes-et-conditions.html">Termes et conditions</a>
+    </div>
   </footer>
 </body>
 </html>

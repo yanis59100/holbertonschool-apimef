@@ -1,65 +1,117 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Boutique</title>
+  <meta name="description" content="Achetez des miels de qualité, produits par Apimef, à des prix compétitifs.">
+  <meta name="keywords" content="miel, boutique, vente, tilleul, printemps, été, colza">
+  <title>Boutique - Apimef</title>
   <link rel="stylesheet" href="/apimef/frontend/CSS/boutique.css">
   <script src="/apimef/frontend/Javascript/boutique.js"></script>
   <link rel="shortcut icon" href="/apimef/img/apimef.jpg" type="image/png" />
 </head>
 <body>
-  <nav aria-label="Navigation principale">
+  <header>
+    <nav aria-label="Navigation principale">
+      <ul>
+        <li><a href="/">Accueil</a></li>
+        <li><a href="boutique">Boutique</a></li>
+        <li><a href="images">Galerie</a></li>
+        <li><a href="inscription">Inscription</a></li>
+        <li><a href="connexion">Connexion</a></li>
+        <li><a href="contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section class="intro">
+      <h4>Quatre gammes pour une sélection de miels d'exception</h4>
+      <p>Découvrez notre sélection de miels biologiques récoltés directement dans nos ruches. Chaque pot contient l'authenticité du savoir-faire apicole d'Apimef.</p>
+    </section>
+
+    <section class="recherche">
+      <form action="search" method="get">
+        <input type="text" name="q" placeholder="Rechercher un produit" aria-label="Recherche de produit">
+        <button type="submit">Rechercher</button>
+      </form>
+    </section>
+
+    <h3>Nos Produits</h3>
+    
+    <section class="articles">
+      <article class="article">
+        <img src="/apimef/img/image miel/IMG-20241116-WA0002.jpg" alt="Miel de tilleul en pot">
+        <div class="info-article">
+          <span>Miel de tilleul - Prix: 12€</span>
+          <p>Le miel de tilleul, récolté au cœur de la saison estivale, se distingue par ses arômes délicats et son goût léger.</p>
+          <button onclick="ajouterAuPanier('Miel de tilleul', 12)" aria-label="Ajouter Miel de tilleul au panier">Ajouter au panier</button>
+        </div>
+      </article>
+
+      <article class="article">
+        <img src="/apimef/img/image miel/IMG-20241116-WA0004.jpg" alt="Miel de printemps en pot">
+        <div class="info-article">
+          <span>Miel de printemps - Prix: 10€</span>
+          <p>Le miel de printemps est récolté lors des premières floraisons de l'année, offrant un goût doux et floral qui plait à tous.</p>
+          <button onclick="ajouterAuPanier('Miel de printemps', 10)" aria-label="Ajouter Miel de printemps au panier">Ajouter au panier</button>
+        </div>
+      </article>
+
+      <article class="article">
+        <img src="/apimef/img/image miel/IMG-20241116-WA0003.jpg" alt="Miel d'été en pot">
+        <div class="info-article">
+          <span>Miel d'été - Prix: 10€</span>
+          <p>Le miel d'été, récolté à la fin de la saison chaude, possède une richesse de saveurs qui varie selon les fleurs butinées par nos abeilles.</p>
+          <button onclick="ajouterAuPanier('Miel d été', 10)" aria-label="Ajouter Miel d'été au panier">Ajouter au panier</button>
+        </div>
+      </article>
+
+      <article class="article">
+        <img src="/apimef/img/image miel/IMG-20241116-WA0001.jpg" alt="Miel de colza en pot">
+        <div class="info-article">
+          <span>Miel de colza - Prix: 10€</span>
+          <p>Le miel de colza, très crémeux, est parfait pour ceux qui préfèrent un miel doux et fondant. Idéal sur du pain grillé ou dans vos boissons.</p>
+          <button onclick="ajouterAuPanier('Miel de colza', 10)" aria-label="Ajouter Miel de colza au panier">Ajouter au panier</button>
+        </div>
+      </article>
+    </section>
+
+    <section class="panier">
+      <h2>Panier</h2>
+      <ul id="panierListe"></ul>
+      <p>Total: <span id="totalPrix">0€</span></p>
+      <button onclick="finaliserAchat()">Finaliser l'achat</button>
+    </section>
+
+    <section id="temoignages">
+      <h3>Témoignages de nos clients</h3>
+      <div class="temoignage">
+        <p>"Le miel Apimef est délicieux et d'une qualité exceptionnelle. Je le recommande vivement!"</p>
+        <p>- Yanis M</p>
+      </div>
+      <div class="temoignage">
+        <p>"J'aime soutenir des producteurs locaux et Apimef est l'exemple parfait de l'apiculteure responsable."</p>
+        <p>- Lostyxs</p>
+      </div>
+    </section>
+
+  </main>
+
+  <footer role="contentinfo">
+    <p>
+      Vous avez une question ? <a href="mailto:8845@holbertonstudents.com">Contactez-nous</a>
+    </p>
+    <p>&copy; 2024 Apimef. Tous droits réservés.</p>
+    <p>Suivez-nous sur :</p>
     <ul>
-      <li><a href="/">Accueil</a></li>
-      <li><a href="boutique">Boutique</a></li>
-      <li><a href="images">Galerie</a></li>
-      <li><a href="inscription">Inscription</a></li>
-      <li><a href="connexion">Connexion</a></li>
-      <li><a href="contact">Contact</a></li>
+      <li><a href="https://facebook.com/Apimef" target="_blank" aria-label="Suivre Apimef sur Facebook">Facebook</a></li>
+      <li><a href="https://instagram.com/Apimef" target="_blank" aria-label="Suivre Apimef sur Instagram">Instagram</a></li>
     </ul>
-  </nav>
-  <div>
-    <h4>Miel a vendre</h4>
-  </div>
+    <div>
+      <a href="politique-de-confidentialite.html">Politique de confidentialité</a> | <a href="termes-et-conditions.html">Termes et conditions</a>
+    </div>
+  </footer>
 
-  <div class="articles">
-    <img src="/apimef/img/image miel/IMG-20241116-WA0002.jpg" alt="photo-miel">
-      <span>Miel de tilleul - Prix: 12€</span>
-      <button onclick="ajouterAuPanier('Miel de tilleul', 12)">Ajouter au panier</button>
-  </div>
-
-
-  <div class="article">
-    <img src="/apimef/img/image miel/IMG-20241116-WA0004.jpg" alt="photo-miel">
-    <span>Miel de printemps - Prix: 10€</span>
-    <button onclick="ajouterAuPanier('Miel de printemps', 10)">Ajouter au panier</button>
-</div>
-
-<div class="article">
-  <img src="/apimef/img/image miel/IMG-20241116-WA0003.jpg" alt="photo-miel">
-    <span>Miel d'été - Prix: 10€</span>
-    <button onclick="ajouterAuPanier('Miel d été', 10)">Ajouter au panier</button>
-</div>
-
-<div class="articles">
-  <img src="/apimef/img/image miel/IMG-20241116-WA0001.jpg" alt="photo-miel">
-    <span>Miel de colza - Prix: 10€</span>
-    <button onclick="ajouterAuPanier('Miel de colza', 10)">Ajouter au panier</button>
-</div>
-
-<div class="panier">
-    <h2>Panier</h2>
-    <ul id="panierListe"></ul>
-    <p>Total: <span id="totalPrix">0€</span></p>
-    <button onclick="finaliserAchat()">Finaliser l'achat</button>
-</div>
-<br>
-<footer role="contentinfo">
-  <p>
-    Vous avez une question ? <a href="mailto:8845@holbertonstudents.com">Contactez-nous</a>
-  </p>
-  <p>&copy; 2024 Apimef. Tous droits réservés.</p>
-</footer>
 </body>
 </html>

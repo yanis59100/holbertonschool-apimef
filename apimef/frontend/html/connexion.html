@@ -3,41 +3,68 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Connexion</title>
+    <meta name="description" content="Connectez-vous à votre compte Apimef pour accéder à nos produits et services.">
+    <meta name="keywords" content="connexion, Apimef, compte, authentification">
+    <title>Connexion - Apimef</title>
     <link rel="stylesheet" href="/apimef/frontend/CSS/connexion.css">
+    <link rel="stylesheet" href="/apimef/frontend/Javascript/connexion.js">
     <link rel="shortcut icon" href="/apimef/img/apimef.jpg" type="image/png" />
 </head>
 <body>
-  <nav aria-label="Navigation principale">
-    <ul>
-      <li><a href="/">Accueil</a></li>
-      <li><a href="boutique">Boutique</a></li>
-      <li><a href="images">Galerie</a></li>
-      <li><a href="inscription">Inscription</a></li>
-      <li><a href="connexion">Connexion</a></li>
-      <li><a href="contact">Contact</a></li>
-    </ul>
-  </nav>
-    <div class="container">
-        <h1>Connexion</h1>
-        <form action="traitement_connexion.php" method="post">
-            <label for="email">Email :</label>
-            <input type="email" id="email" name="email" placeholder="Votre email" required>
+    <header>
+        <nav aria-label="Navigation principale">
+            <ul>
+                <li><a href="/">Accueil</a></li>
+                <li><a href="boutique">Boutique</a></li>
+                <li><a href="images">Galerie</a></li>
+                <li><a href="inscription">Inscription</a></li>
+                <li><a href="connexion">Connexion</a></li>
+                <li><a href="contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
 
-            <label for="password">Mot de passe :</label>
-            <input type="password" id="password" name="password" placeholder="Votre mot de passe" required>
+    <main>
+        <section class="container">
+            <h1>Connexion à votre compte Apimef</h1>
 
-            <button type="submit">Se connecter</button>
-        </form>
-        <div class="footer">
-            <p>Pas encore inscrit ? <a href="inscription">Créez un compte ici</a>.</p>
-        </div>
-    </div>
+            <div id="errorMessage" style="display: none; color: red;">
+                <p>Erreur : Email ou mot de passe incorrect.</p>
+            </div>
+
+            <form action="traitement_connexion.php" method="post" aria-labelledby="formConnexion">
+                <div>
+                    <label for="email">Email :</label>
+                    <input type="email" id="email" name="email" placeholder="Votre email" required aria-required="true" aria-describedby="emailHelp">
+                </div>
+                <div>
+                    <label for="password">Mot de passe :</label>
+                    <input type="password" id="password" name="password" placeholder="Votre mot de passe" required aria-required="true" aria-describedby="passwordHelp">
+                </div>
+
+                <button type="submit">Se connecter</button>
+            </form>
+
+            <div class="footer">
+                <p><a href="mot-de-passe-oublie" aria-label="Page de récupération du mot de passe">Mot de passe oublié ?</a></p>
+                <p>Pas encore inscrit ? <a href="inscription" aria-label="Page d'inscription">Créez un compte ici</a>.</p>
+            </div>
+        </section>
+    </main>
+
     <footer role="contentinfo">
-      <p>
-        Vous avez une question ? <a href="mailto:8845@holbertonstudents.com">Contactez-nous</a>
-      </p>
-      <p>&copy; 2024 Apimef. Tous droits réservés.</p>
-    </footer>
+        <p>
+          Vous avez une question ? <a href="mailto:8845@holbertonstudents.com">Contactez-nous</a>
+        </p>
+        <p>&copy; 2024 Apimef. Tous droits réservés.</p>
+        <p>Suivez-nous sur :</p>
+        <ul>
+          <li><a href="https://facebook.com/Apimef" target="_blank" aria-label="Suivre Apimef sur Facebook">Facebook</a></li>
+          <li><a href="https://instagram.com/Apimef" target="_blank" aria-label="Suivre Apimef sur Instagram">Instagram</a></li>
+        </ul>
+        <div>
+          <a href="politique-de-confidentialite.html">Politique de confidentialité</a> | <a href="termes-et-conditions.html">Termes et conditions</a>
+        </div>
+      </footer>
 </body>
 </html>

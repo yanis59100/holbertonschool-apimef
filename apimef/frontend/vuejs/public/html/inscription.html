@@ -6,7 +6,9 @@
     <meta name="description" content="Inscrivez-vous sur Apimef pour accéder à notre boutique en ligne, suivre votre commande et découvrir notre univers apicole.">
     <meta name="keywords" content="inscription, Apimef, miel bio, boutique en ligne, apiculture, créer un compte">
     <title>Page d'Inscription - Apimef</title>
-    <link rel="stylesheet" href="/apimef/frontend/CSS/inscription.css">
+    <link rel="stylesheet" href="/apimef/frontend/vuejs/public/CSS/inscription.css" />
+    <script src="/apimef/frontend//vuejs/public/Javascript/scripts.js"></script>
+    <script src="/apimef/frontend/vuejs/public/Javascript/inscription.js"></script>
     <link rel="shortcut icon" href="/apimef/img/apimef.jpg" type="image/png" />
 </head>
 <body>
@@ -18,6 +20,7 @@
       <li><a href="inscription">Inscription</a></li>
       <li><a href="connexion">Connexion</a></li>
       <li><a href="contact">Contact</a></li>
+      <li id="user-name" style="display:none;">Bienvenue, <span id="user-name-span"></span>!</li>
     </ul>
   </nav>
 

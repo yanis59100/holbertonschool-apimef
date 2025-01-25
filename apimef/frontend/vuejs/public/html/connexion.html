@@ -6,7 +6,8 @@
     <meta name="description" content="Connectez-vous à votre compte Apimef pour accéder à nos produits et services.">
     <meta name="keywords" content="connexion, Apimef, compte, authentification">
     <title>Connexion - Apimef</title>
-    <link rel="stylesheet" href="/apimef/frontend/CSS/connexion.css">
+    <link rel="stylesheet" href="/apimef/frontend/vuejs/public/CSS/connexion.css" />
+    <script src="/apimef/frontend//vuejs/public/Javascript/scripts.js"></script>
     <link rel="shortcut icon" href="/apimef/img/apimef.jpg" type="image/png" />
 </head>
 <body>
@@ -18,6 +19,7 @@
                 <li><a href="inscription">Inscription</a></li>
                 <li><a href="connexion">Connexion</a></li>
                 <li><a href="contact">Contact</a></li>
+                <li id="user-name" style="display:none;">Bienvenue, <span id="user-name-span"></span>!</li>
             </ul>
         </nav>
     </header>

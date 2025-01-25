@@ -7,8 +7,9 @@
   <meta name="description" content="Achetez des miels de qualité, produits par Apimef, à des prix compétitifs.">
   <meta name="keywords" content="miel, boutique, vente, tilleul, printemps, été, colza">
   <title>Boutique - Apimef</title>
-  <link rel="stylesheet" href="/apimef/frontend/CSS/boutique.css">
-  <script src="/apimef/frontend/Javascript/boutique.js" defer></script>
+  <link rel="stylesheet" href="/apimef/frontend/vuejs/public/CSS/boutique.css" />
+    <script src="/apimef/frontend//vuejs/public/Javascript/scripts.js"></script>
+    <script src="/apimef/frontend/vuejs/public/Javascript/boutique.js"></script>
   <link rel="shortcut icon" href="/apimef/img/apimef.jpg" type="image/png">
 </head>
 <body>
@@ -21,6 +22,7 @@
         <li><a href="inscription">Inscription</a></li>
         <li><a href="connexion">Connexion</a></li>
         <li><a href="contact">Contact</a></li>
+        <li id="user-name" style="display:none;">Bienvenue, <span id="user-name-span"></span>!</li>
       </ul>
     </nav>
   </header>

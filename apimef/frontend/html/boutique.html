@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -132,12 +133,10 @@
       const panierListe = document.getElementById("panierListe");
       const totalPrix = document.getElementById("totalPrix");
 
-      // Ajouter l'article au panier
       const item = document.createElement("li");
       item.textContent = `${quantite} x ${produit} - ${prix * quantite}€`;
       panierListe.appendChild(item);
 
-      // Mettre à jour le total
       const totalActuel = parseInt(totalPrix.textContent.replace("€", ""), 10);
       const nouveauTotal = totalActuel + prix * quantite;
       totalPrix.textContent = `${nouveauTotal}€`;

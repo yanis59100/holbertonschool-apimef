@@ -7,16 +7,14 @@
     <meta name="keywords" content="connexion, Apimef, compte, authentification">
     <title>Connexion - Apimef</title>
     <link rel="stylesheet" href="/apimef/frontend/CSS/connexion.css">
-    <link rel="stylesheet" href="/apimef/frontend/Javascript/connexion.js">
     <link rel="shortcut icon" href="/apimef/img/apimef.jpg" type="image/png" />
 </head>
 <body>
     <header>
-        <nav aria-label="Navigation principale">
+        <nav>
             <ul>
                 <li><a href="/">Accueil</a></li>
                 <li><a href="boutique">Boutique</a></li>
-                <li><a href="images">Galerie</a></li>
                 <li><a href="inscription">Inscription</a></li>
                 <li><a href="connexion">Connexion</a></li>
                 <li><a href="contact">Contact</a></li>
@@ -32,39 +30,23 @@
                 <p>Erreur : Email ou mot de passe incorrect.</p>
             </div>
 
-            <form action="traitement_connexion.php" method="post" aria-labelledby="formConnexion">
+            <form id="connexion-form">
                 <div>
                     <label for="email">Email :</label>
-                    <input type="email" id="email" name="email" placeholder="Votre email" required aria-required="true" aria-describedby="emailHelp">
+                    <input type="email" id="email" name="email" placeholder="Votre email" required>
                 </div>
                 <div>
                     <label for="password">Mot de passe :</label>
-                    <input type="password" id="password" name="password" placeholder="Votre mot de passe" required aria-required="true" aria-describedby="passwordHelp">
+                    <input type="password" id="password" name="password" placeholder="Votre mot de passe" required>
                 </div>
-
                 <button type="submit">Se connecter</button>
             </form>
-
-            <div class="footer">
-                <p><a href="mot-de-passe-oublie" aria-label="Page de récupération du mot de passe">Mot de passe oublié ?</a></p>
-                <p>Pas encore inscrit ? <a href="inscription" aria-label="Page d'inscription">Créez un compte ici</a>.</p>
-            </div>
         </section>
     </main>
 
-    <footer role="contentinfo">
-        <p>
-          Vous avez une question ? <a href="mailto:8845@holbertonstudents.com">Contactez-nous</a>
-        </p>
-        <p>&copy; 2024 Apimef. Tous droits réservés.</p>
-        <p>Suivez-nous sur :</p>
-        <ul>
-          <li><a href="https://facebook.com/Apimef" target="_blank" aria-label="Suivre Apimef sur Facebook">Facebook</a></li>
-          <li><a href="https://instagram.com/Apimef" target="_blank" aria-label="Suivre Apimef sur Instagram">Instagram</a></li>
-        </ul>
-        <div>
-          <a href="politique-de-confidentialite.html">Politique de confidentialité</a> | <a href="termes-et-conditions.html">Termes et conditions</a>
-        </div>
-      </footer>
+    <footer>
+        <p><a href="mot-de-passe-oublie">Mot de passe oublié ?</a></p>
+        <p>Pas encore inscrit ? <a href="inscription">Créez un compte ici</a>.</p>
+    </footer>
 </body>
 </html>

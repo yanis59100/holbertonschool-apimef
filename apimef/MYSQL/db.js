@@ -1,19 +1,10 @@
-// db.js
 const mysql = require('mysql2');
 
-const connection = mysql.createConnection({
+const pool = mysql.createPool({
   host: 'localhost',
-  user: 'root',         // Remplacez par votre nom d'utilisateur MySQL
-  password: 'password', // Remplacez par votre mot de passe MySQL
-  database: 'apimef'    // Remplacez par le nom de votre base de données
+  user: 'root',
+  password: process.env.DB_PASSWORD,
+  database: 'apimef'
 });
 
-connection.connect((err) => {
-  if (err) {
-    console.error('Erreur de connexion à la base de données: ' + err.stack);
-    return;
-  }
-  console.log('Connecté à la base de données MySQL avec l\'ID de connexion ' + connection.threadId);
-});
-
-module.exports = connection;
+module.exports = pool.promise();

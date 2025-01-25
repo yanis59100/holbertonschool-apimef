@@ -20,9 +20,9 @@ document.getElementById('connexion-form').addEventListener('submit', function(ev
     .then(data => {
         if (data.success) {
             alert('Connexion réussie !');
-            window.location.href = 'dashboard.html';
+            window.location.href = '/';
         } else {
-            alert('Erreur: ' + data.message);
+            document.getElementById('errorMessage').style.display = 'block';
         }
     })
     .catch(error => {

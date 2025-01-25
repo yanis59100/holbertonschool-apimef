@@ -1,4 +1,4 @@
-<!DOCTYPE html> 
+<!DOCTYPE html>
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
@@ -7,7 +7,6 @@
     <meta name="keywords" content="inscription, Apimef, miel bio, boutique en ligne, apiculture, créer un compte">
     <title>Page d'Inscription - Apimef</title>
     <link rel="stylesheet" href="/apimef/frontend/CSS/inscription.css">
-    <link rel="stylesheet" href="/apimef/frontend/Javascript/inscription.js">
     <link rel="shortcut icon" href="/apimef/img/apimef.jpg" type="image/png" />
 </head>
 <body>
@@ -26,30 +25,30 @@
     <h1>Inscription</h1>
     <p>Créez un compte sur Apimef pour profiter d'une expérience personnalisée, suivre vos commandes et découvrir nos produits apicoles.</p>
     
-    <form action="submit_form.php" method="post" id="inscription-form">
+    <form id="inscription-form">
         <label for="nom">Nom :</label>
-        <input type="text" id="nom" name="nom" placeholder="Votre nom" required aria-label="Votre nom" aria-required="true">
+        <input type="text" id="nom" name="nom" placeholder="Votre nom" required>
 
         <label for="prenom">Prénom :</label>
-        <input type="text" id="prenom" name="prenom" placeholder="Votre prénom" required aria-label="Votre prénom" aria-required="true">
+        <input type="text" id="prenom" name="prenom" placeholder="Votre prénom" required>
 
         <label for="adresse">Adresse de Livraison :</label>
-        <input type="text" id="adresse" name="adresse" placeholder="Votre adresse" required aria-label="Votre adresse de livraison" aria-required="true">
+        <input type="text" id="adresse" name="adresse" placeholder="Votre adresse" required>
 
         <label for="ville">Ville de Livraison :</label>
-        <input type="text" id="ville" name="ville" placeholder="Votre ville" required aria-label="Votre ville de livraison" aria-required="true">
+        <input type="text" id="ville" name="ville" placeholder="Votre ville" required>
 
         <label for="code_postal">Code Postal :</label>
-        <input type="text" id="code_postal" name="code_postal" placeholder="Votre code postal" required aria-label="Votre code postal" aria-required="true">
+        <input type="text" id="code_postal" name="code_postal" placeholder="Votre code postal" required>
 
         <label for="email">Email :</label>
-        <input type="email" id="email" name="email" placeholder="Votre email" required aria-label="Votre adresse email" aria-required="true">
+        <input type="email" id="email" name="email" placeholder="Votre email" required>
 
         <label for="password">Mot de passe :</label>
-        <input type="password" id="password" name="password" placeholder="Votre mot de passe" required autocomplete="new-password" aria-label="Votre mot de passe" aria-required="true">
+        <input type="password" id="password" name="password" placeholder="Votre mot de passe" required>
 
         <label for="confirm_password">Confirmer votre mot de passe :</label>
-        <input type="password" id="confirm_password" name="confirm_password" placeholder="Confirmer votre mot de passe" required autocomplete="new-password" aria-label="Confirmer votre mot de passe" aria-required="true">
+        <input type="password" id="confirm_password" name="confirm_password" placeholder="Confirmer votre mot de passe" required>
 
         <button type="submit">S'inscrire</button>
     </form>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Apimef - Profil utilisateur" />
+  <title>Profil - Apimef</title>
+  <link rel="stylesheet" href="/apimef/CSS/styles.css">
+</head>
+<body>
+
+  <nav aria-label="Navigation principale">
+    <ul>
+      <li><a href="/">Accueil</a></li>
+      <li><a href="boutique">Boutique</a></li>
+      <li><a href="images">Galerie</a></li>
+      <li><a href="inscription">Inscription</a></li>
+      <li><a href="connexion">Connexion</a></li>
+      <li><a href="contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <header>
+    <h1>Profil de l'utilisateur</h1>
+  </header>
+
+  <section id="profil-info">
+    <h2>Informations personnelles</h2>
+    <div>
+      <label for="nom">Nom :</label>
+      <span id="nom"></span>
+    </div>
+    <div>
+      <label for="prenom">Prénom :</label>
+      <span id="prenom"></span>
+    </div>
+    <div>
+      <label for="email">Email :</label>
+      <span id="email"></span>
+    </div>
+    <button id="edit-profile">Modifier le profil</button>
+  </section>
+
+  <section id="profil-edit" style="display: none;">
+    <h2>Modifier vos informations</h2>
+    <form id="edit-form">
+      <div>
+        <label for="edit-nom">Nom :</label>
+        <input type="text" id="edit-nom" />
+      </div>
+      <div>
+        <label for="edit-prenom">Prénom :</label>
+        <input type="text" id="edit-prenom" />
+      </div>
+      <div>
+        <label for="edit-email">Email :</label>
+        <input type="email" id="edit-email" />
+      </div>
+      <button type="submit">Sauvegarder</button>
+    </form>
+  </section>
+
+  <footer>
+    <p>&copy; 2024 Apimef. Tous droits réservés.</p>
+  </footer>
+
+  <!-- Inclusion du script JavaScript externe -->
+  <script src="/apimef/JS/profil.js"></script>
+</body>
+</html>

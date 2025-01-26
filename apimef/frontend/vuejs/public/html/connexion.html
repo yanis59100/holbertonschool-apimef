@@ -6,22 +6,27 @@
     <meta name="description" content="Connectez-vous à votre compte Apimef pour accéder à nos produits et services.">
     <meta name="keywords" content="connexion, Apimef, compte, authentification">
     <title>Connexion - Apimef</title>
-    <link rel="stylesheet" href="/apimef/frontend/vuejs/public/CSS/connexion.css" />
+    <link rel="stylesheet" href="/apimef/CSS/connexion.css">
     <script src="/apimef/frontend//vuejs/public/Javascript/scripts.js"></script>
+    <script src="/apimef/frontend/vuejs/public/Javascript/user-session.js"></script>
     <link rel="shortcut icon" href="/apimef/img/apimef.jpg" type="image/png" />
 </head>
 <body>
     <header>
-        <nav>
+        <nav aria-label="Navigation principale">
             <ul>
-                <li><a href="/">Accueil</a></li>
-                <li><a href="boutique">Boutique</a></li>
-                <li><a href="inscription">Inscription</a></li>
-                <li><a href="connexion">Connexion</a></li>
-                <li><a href="contact">Contact</a></li>
-                <li id="user-name" style="display:none;">Bienvenue, <span id="user-name-span"></span>!</li>
+              <li><a href="/">Accueil</a></li>
+              <li><a href="boutique">Boutique</a></li>
+              <li><a href="images">Galerie</a></li>
+              <li><a href="inscription">Inscription</a></li>
+              <li><a href="connexion">Connexion</a></li>
+              <li><a href="profil">Mon Profil</a></li>
+              <li id="user-info" style="display: none;">
+                Bienvenue, <span id="user-name"></span>!
+                <button id="logout-btn">Déconnexion</button>
+              </li>
             </ul>
-        </nav>
+          </nav>
     </header>
 
     <main>

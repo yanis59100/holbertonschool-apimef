@@ -7,8 +7,9 @@
     <meta name="keywords" content="apiculture, miel bio, ruches, abeilles, produits biologiques, apimef" />
     <title>Apimef - Apiculture et Miel Bio</title>
     <link rel="shortcut icon" href="/apimef/img/apimef.jpg" type="image/png" />
-    <link rel="stylesheet" href="/apimef/frontend/vuejs/public/CSS/styles.css" />
-    <script src="/apimef/frontend//vuejs/public/Javascript/scripts.js"></script>
+    <link rel="stylesheet" href="/apimef/CSS/styles.css">
+    <script src="/apimef/frontend/vuejs/public/Javascript/user-session.js"></script>
+    <script src="./Javascript/scripts.js"></script>
   </head>
   <body>
     <nav aria-label="Navigation principale">
@@ -18,8 +19,11 @@
         <li><a href="images">Galerie</a></li>
         <li><a href="inscription">Inscription</a></li>
         <li><a href="connexion">Connexion</a></li>
-        <li><a href="contact">Contact</a></li>
-        <li id="user-name" style="display:none;">Bienvenue, <span id="user-name-span"></span>!</li>
+        <li><a href="profil">Mon Profil</a></li>
+        <li id="user-info" style="display: none;">
+          Bienvenue, <span id="user-name"></span>!
+          <button id="logout-btn">Déconnexion</button>
+        </li>
       </ul>
     </nav>
 

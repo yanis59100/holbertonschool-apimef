@@ -1,10 +1,12 @@
 const express = require('express');
 const path = require('path');
 const mysql = require('mysql2');
-const bcrypt = require('bcryptjs');  // Ajout pour le hachage des mots de passe
+const bcrypt = require('bcryptjs');
+const jwt = require('jsonwebtoken');
 const app = express();
 const port = 3000;
 
+// Connexion à la base de données MySQL
 const db = mysql.createConnection({
   host: 'localhost',
   user: 'root',
@@ -20,50 +22,106 @@ db.connect((err) => {
   console.log('Connecté à la base de données MySQL');
 });
 
-app.use(express.json());  // Pour parser les données JSON dans le corps de la requête
-app.use('/apimef/frontend', express.static(path.join(__dirname, '../../frontend')));
-app.use('/apimef/img', express.static(path.join(__dirname, '../../img')));
+// Middleware pour parser le corps des requêtes en JSON
+app.use(express.json());
+
+// Middleware pour servir les fichiers statiques
+app.use('/apimef/CSS', express.static(path.join(__dirname, '../../frontend/vuejs/public/CSS')));
+app.use('/apimef/img', express.static(path.join(__dirname, '../../frontend/vuejs/public/img')));
+app.use('/apimef/JS', express.static(path.join(__dirname, '../../frontend/vuejs/public/Javascript')));
 
 // Routes pour afficher les pages HTML
 app.get('/', (req, res) => {
-  res.sendFile(path.join(__dirname, '../../frontend/html/index.html'));
+  res.sendFile(path.join(__dirname, '../../frontend/vuejs/public/index.html'));
 });
 
 app.get('/boutique', (req, res) => {
-  res.sendFile(path.join(__dirname, '../../frontend/html/boutique.html'));
-});
-
-app.get('/connexion', (req, res) => {
-  res.sendFile(path.join(__dirname, '../../frontend/html/connexion.html'));
-});
-
-app.get('/inscription', (req, res) => {
-  res.sendFile(path.join(__dirname, '../../frontend/html/inscription.html'));
+  res.sendFile(path.join(__dirname, '../../frontend/vuejs/public/html/boutique.html'));
 });
 
 app.get('/images', (req, res) => {
-  res.sendFile(path.join(__dirname, '../../frontend/html/images.html'));
+  res.sendFile(path.join(__dirname, '../../frontend/vuejs/public/html/images.html'));
 });
 
 app.get('/contact', (req, res) => {
-  res.sendFile(path.join(__dirname, '../../frontend/html/contact.html'));
+  res.sendFile(path.join(__dirname, '../../frontend/vuejs/public/html/contact.html'));
 });
 
-// Route pour obtenir des données (exemple pour votre table)
-app.get('/data', (req, res) => {
-  db.query('SELECT * FROM your_table_name', (err, results) => {
+app.get('/inscription', (req, res) => {
+  res.sendFile(path.join(__dirname, '../../frontend/vuejs/public/html/inscription.html'));
+});
+
+app.get('/connexion', (req, res) => {
+  res.sendFile(path.join(__dirname, '../../frontend/vuejs/public/html/connexion.html'));
+});
+
+// Route pour afficher la page de profil (HTML)
+app.get('/profil', verifyToken, (req, res) => {
+  res.sendFile(path.join(__dirname, '../../frontend/vuejs/public/html/profil.html'));
+});
+
+// Middleware de vérification du token JWT
+function verifyToken(req, res, next) {
+  const token = req.headers['authorization'];
+
+  if (!token) {
+    return res.status(403).json({ success: false, message: 'Token manquant' });
+  }
+
+  jwt.verify(token, 'ma_clé_secrète_ultra_sécurisée', (err, decoded) => {
     if (err) {
-      console.error('Erreur lors de la requête:', err.stack);
-      res.status(500).send('Erreur serveur');
-      return;
+      return res.status(401).json({ success: false, message: 'Token invalide' });
     }
-    res.json(results);
+    req.user = decoded;
+    next();
+  });
+}
+
+// Route pour récupérer les informations du profil utilisateur (GET)
+app.get('/profil-info', verifyToken, (req, res) => {
+  const userId = req.user.id; // Récupérer l'ID de l'utilisateur à partir du token
+
+  db.query('SELECT nom, prenom, email FROM utilisateurs WHERE id = ?', [userId], (err, results) => {
+    if (err) {
+      console.error('Erreur de requête:', err.stack);
+      return res.status(500).json({ success: false, message: 'Erreur serveur' });
+    }
+
+    if (results.length === 0) {
+      return res.status(404).json({ success: false, message: 'Utilisateur non trouvé' });
+    }
+
+    res.status(200).json(results[0]);
   });
 });
 
-// Route d'inscription
+// Route pour modifier le profil de l'utilisateur (PUT)
+app.put('/profil-modifier', verifyToken, (req, res) => {
+  const userId = req.user.id;
+  const { nom, prenom, email } = req.body;
+
+  if (!nom || !prenom || !email) {
+    return res.status(400).json({ success: false, message: 'Tous les champs sont obligatoires' });
+  }
+
+  const query = 'UPDATE utilisateurs SET nom = ?, prenom = ?, email = ? WHERE id = ?';
+  db.query(query, [nom, prenom, email, userId], (err, result) => {
+    if (err) {
+      console.error('Erreur de mise à jour:', err.stack);
+      return res.status(500).json({ success: false, message: 'Erreur de mise à jour du profil' });
+    }
+
+    if (result.affectedRows === 0) {
+      return res.status(404).json({ success: false, message: 'Utilisateur non trouvé' });
+    }
+
+    res.status(200).json({ success: true, message: 'Profil mis à jour avec succès' });
+  });
+});
+
+// Route d'inscription (POST)
 app.post('/inscription', (req, res) => {
-  const { nom, prenom, adresse, ville, codePostal, email, password } = req.body;
+  const { nom, prenom, email, password } = req.body;
 
   // Vérifier si l'email existe déjà
   db.query('SELECT * FROM utilisateurs WHERE email = ?', [email], (err, results) => {
@@ -84,23 +142,26 @@ app.post('/inscription', (req, res) => {
       }
 
       // Insérer l'utilisateur dans la base de données
-      const query = 'INSERT INTO utilisateurs (nom, prenom, adresse, ville, code_postal, email, mot_de_passe) VALUES (?, ?, ?, ?, ?, ?, ?)';
-      db.query(query, [nom, prenom, adresse, ville, codePostal, email, hashedPassword], (err, result) => {
+      const query = 'INSERT INTO utilisateurs (nom, prenom, email, mot_de_passe) VALUES (?, ?, ?, ?)';
+      db.query(query, [nom, prenom, email, hashedPassword], (err, result) => {
         if (err) {
-          console.error('Erreur lors de l\'insertion:', err.stack);
+          console.error('Erreur d\'insertion:', err.stack);
           return res.status(500).json({ success: false, message: 'Erreur d\'insertion dans la base de données' });
         }
-        res.status(200).json({ success: true, message: 'Inscription réussie' });
+
+        // Créer le token JWT
+        const token = jwt.sign({ id: result.insertId }, 'ma_clé_secrète_ultra_sécurisée', { expiresIn: '1h' });
+
+        res.status(200).json({ success: true, message: 'Inscription réussie', token });
       });
     });
   });
 });
 
-// Route de connexion
+// Route de connexion (POST)
 app.post('/connexion', (req, res) => {
   const { email, password } = req.body;
 
-  // Vérifier si l'utilisateur existe
   db.query('SELECT * FROM utilisateurs WHERE email = ?', [email], (err, results) => {
     if (err) {
       console.error('Erreur de requête:', err.stack);
@@ -113,7 +174,6 @@ app.post('/connexion', (req, res) => {
 
     const utilisateur = results[0];
 
-    // Comparer le mot de passe avec celui stocké dans la base de données
     bcrypt.compare(password, utilisateur.mot_de_passe, (err, isMatch) => {
       if (err) {
         console.error('Erreur de comparaison de mot de passe:', err.stack);
@@ -124,7 +184,10 @@ app.post('/connexion', (req, res) => {
         return res.status(400).json({ success: false, message: 'Email ou mot de passe incorrect' });
       }
 
-      res.status(200).json({ success: true, message: 'Connexion réussie' });
+      // Créer le token JWT
+      const token = jwt.sign({ id: utilisateur.id }, 'ma_clé_secrète_ultra_sécurisée', { expiresIn: '1h' });
+
+      res.status(200).json({ success: true, message: 'Connexion réussie', token });
     });
   });
 });

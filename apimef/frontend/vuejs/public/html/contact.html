@@ -7,23 +7,27 @@
     <meta name="keywords" content="contact, Apimef, miel bio, apiculture, demande, question" />
     <title>Apimef - Apiculture et Miel Bio</title>
     <link rel="shortcut icon" href="/apimef/img/apimef.jpg" type="image/png" />
-    <link rel="stylesheet" href="/apimef/frontend/vuejs/public/CSS/contact.css" />
+    <link rel="stylesheet" href="/apimef/CSS/contact.css">
     <script src="/apimef/frontend//vuejs/public/Javascript/scripts.js"></script>
+    <script src="/apimef/frontend/vuejs/public/Javascript/user-session.js"></script>
 </head>
 <body>
 
     <header>
         <nav aria-label="Navigation principale">
             <ul>
-                <li><a href="/">Accueil</a></li>
-                <li><a href="boutique">Boutique</a></li>
-                <li><a href="images">Galerie</a></li>
-                <li><a href="inscription">Inscription</a></li>
-                <li><a href="connexion">Connexion</a></li>
-                <li><a href="contact">Contact</a></li>
-                <li id="user-name" style="display:none;">Bienvenue, <span id="user-name-span"></span>!</li>
+              <li><a href="/">Accueil</a></li>
+              <li><a href="boutique">Boutique</a></li>
+              <li><a href="images">Galerie</a></li>
+              <li><a href="inscription">Inscription</a></li>
+              <li><a href="connexion">Connexion</a></li>
+              <li><a href="profil">Mon Profil</a></li>
+              <li id="user-info" style="display: none;">
+                Bienvenue, <span id="user-name"></span>!
+                <button id="logout-btn">Déconnexion</button>
+              </li>
             </ul>
-        </nav>
+          </nav>
     </header>
 
     <main>
